@@ -7,11 +7,12 @@
 </head>
 <body>
 
-<!-- Empezamos con el NAV de arriba -->
+<!-- NAV PRINCIPAL -->
 <!-- Hacemos un nav para el navegador de arriba con las secciones de shop, lookbook... -->
  <!-- Agrupamos en un div el logo, y los iconos. No hace falta la lista ul -->
     <nav>
         <div class="logo_perla">Perla Vintage</div>
+        <img src="Logo-Perla.jpeg" alt="Logo-Perla" class="logo-perla" width="100px" height="100px">
 
         <!-- NO hace falta agrupar la lista de ul en un div ya que es un contenedor ya -->
         <ul class="links-nav"> 
@@ -19,23 +20,25 @@
             <li><a href="#">Lookbook</a></li>
             <li><a href="#">About us</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#">Sophia</a></li>
         </ul>
 
-        <div class="iconos_nav">
+        <div class="icons_nav">
             <a href="#">Instagram</a>
             <a href="#">Carrito 🛒</a>
+            <a href="#">TikTok</a>
         </div>
     </nav>
 
-<!-- Siguiente sección - HERO -->
+<!-- HERO-SECTION -->
 
     <section class="hero-perla">
 
         <!-- Dejamos esta imagen de momento hasta elegir alguna de la compañía. Width y height : em? px? -->
-        <img src="https://images.unsplash.com/photo-1634133118060-99de9d0dc039?w=1600&h=900&fit=crop" alt="hero-perla" width="1000px" height="" >
+        <img src="https://images.unsplash.com/photo-1634133118060-99de9d0dc039?w=1600&h=900&fit=crop" alt="hero-perla" width="" height="" >
 
         <!-- metemos en un div el contenido del div (Titulo). El punto arriba -interpunct- se pone con &middot; y luego cualquier punto se pone arriba  -->
+
+        <div class="hero_content">   
          <p>New York City &middot; Est. 2024</p>
          <h1 class="hero_content">Dressed in <em>another era.</em></h1>
 
@@ -44,12 +47,114 @@
          <a href="#">Shop the collection</a>
          <a href="#">Our story</a>
          
+        </div>
+    </section>
 
-         
+    <!-- TAGLINE CATEGORIES -->
+     <!-- En otro section metemos las categorias que irán con un "titulo parrafo", y una lista de las 5 categorias -->
+
+    <section class="categories">
+        <p><em>Slowly, thoughtfully curated</em></p>
+
+        <ul>
+            <li><a href="#">Dresses</a></li>
+            <li><a href="#">Tops & Blouses</a></li>
+            <li><a href="#">Outwear</a></li>
+            <li><a href="#">Bottoms</a></li>
+            <li><a href="#">Accessories</a></li>
+        </ul>
+    </section>
+
+    <!-- NEW ARRIVALS -->
+
+    <section class="new-arrivals">
+
+        <p class="section-arrivals">JUST IN</p>
+        <h2 class="new-arrivals">New Arrivals</h2>
+
+        <!-- Metemos en un div ahora los productos nuevos en forma de grid -->
 
 
+            <div class="products-grid">
+                <!-- Producto1 -->
+                <article class="products">
+                    <img src="blusa-satinada-anos90-5-scaled.jpg" alt="Blouse" width="300px" height="400px">
+
+                    <p class="product-arrivals">2000s &middot; Made in Italy</p>
+                    <h3>Satin Blouse</h3>
+                    <p class="price-product">$50</p>
+
+                </article>
+
+                <!-- Producto2 -->
+                <article class="products">
+                    <img src="como-combinar-look-vintage-con-actual.jpg" alt="Dress" width="200px" height="300px">
+
+                    <p class="product-arrivals">1990s &middot; Made in USA</p>
+                    <h3>Camel dress</h3>
+                    <p class="price-product">$160</p>
+                    
+                </article>
+
+                <!-- Producto3 -->
+                <article class="products">
+                    <img src="stylish-woman-with-short-hair-jeans-with-belt-holding-flower-street-woman-white-blouse-with-black-lace-posing-city.jpg" alt="flowers top" width="200px" height="300px">
+
+                    <p class="product-arrivals">1990s &middot; Made in New York</p>
+                    <h3>Black flowers top</h3>
+                    <p class="price-product">$75</p>
+                    
+                </article>
+
+                <!-- Producto4  -->
+                <article class="products">
+                    <img src="Tiendas-segunda-mano-y-vintage-Sevilla-1024x683.jpg" alt="sweaters" width="400px" height="300px">
+
+                    <p class="product2">1980-1990s &middot; Made in Spain & France</p>
+                    <h3>Sweaters</h3>
+                    <p class="price-product">$80</p>
+                    
+                </article>
+        
+            </div>
+
+            <a href="#" class="view-all">View All Pieces</a>
 
     </section>
+
+    <!-- OUR STORY -->
+
+    <section class="story">
+        <img src="https://images.unsplash.com/photo-1600709487035-f5d21265155d?w=900&h=800&fit=crop" alt="Perla story" width="" height="" >
+
+        <div class="story-content">
+            <p>OUR STORY</p>
+
+            <h2>Curated with care, <em>worn with intention</em></h2>
+
+            <p>Perla Vintage was born from a love of fashion that outlasts trends. Based in New York City, we source pieces from across Europe — flea markets in London, hidden shops in Spain, estate sales in Italy, and vintage fairs in France.</p>
+
+            <p>Every garment is hand-selected, cleaned, and photographed by us. We believe sustainable fashion isn't a sacrifice — it's a discovery.</p>
+
+            <a href="#">MEET THE TEAM</a>
+
+        </div>
+
+    </section>
+
+    <!-- Instagram -->
+     <!-- Se agrupan en un div las fotos que luego iran una tras otra? -->
+
+    <a href="#" class="instagram-handle">@PERLA.VINTAGE.NYC</a>
+      <div class="instagram-grid">
+        <a href="#"><img src="https://images.unsplash.com/photo-1619384259054-ee3ce9d1798c?w=300&h=300&fit=crop" alt="Perla Vintage en Instagram"></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1470092922729-762ec45090ac?w=300&h=300&fit=crop" alt="Perla Vintage en Instagram"></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1557771551-634f8d68b0a5?w=300&h=300&fit=crop" alt="Perla Vintage en Instagram"></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1494795817488-f572f2a30c87?w=300&h=300&fit=crop" alt="Perla Vintage en Instagram"></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1634133118079-317c0d007dae?w=300&h=300&fit=crop" alt="Perla Vintage en Instagram"></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1718206485494-0d591a06f1c5?w=300&h=300&fit=crop" alt="Perla Vintage en Instagram"></a>
+    </div>
+
     
 </body>
 </html>
