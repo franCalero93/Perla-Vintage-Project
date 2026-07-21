@@ -1,0 +1,51 @@
+/* Hacemos unas variables globales con var para poder reutilizarlo cuando queramos y no tener que repetir los mismos valores */
+
+
+/* ── Variables globales ── */
+:root {
+    --color-background: #FAF7F2;
+    --color-text: #221C15;
+    --color-primary: #221C15;
+    --color-muted: #8A7968;
+    --color-accent: #B8896A;
+    --color-card: #F3EDE3;
+    --color-borde: rgba(34, 28, 21, 0.1);
+
+    --font-serif: 'Lora', serif;
+    --font-sans: 'DM Sans', sans-serif;
+}
+
+/* ── Reset básico ── */
+
+/* margin 0 y padding 0 hace que partamos desde 0 con los margenes y podamos controlar el espaciado  */
+/* box sizing border-box hace que el ancho y alto incluyan el padding y el border */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ── Base ── */
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+}
+
+/* Aqui le decimos a todos los links que quiten el subrayado y que el color lo herede del elemento padre (negro por ahora) */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none; 
+} 
+
+/* img --- quita un espacio fantasma que las imágenes dejan por debajo por defecto (viene de tratarse como texto en línea). max-width: 100% es clave para responsive: evita que una imagen se desborde de su contenedor si la imagen original es más ancha que el espacio disponible — se encoge para caber, pero nunca crece más de su tamaño real. */
+
+img {
+    display: block;
+    max-width: 100%;
+}
+

@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perla Vintage NYC</title>
+
+    <!-- Link CSS external -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/styles.css">
+    
 </head>
 <body>
 
@@ -12,7 +22,7 @@
  <!-- Agrupamos en un div el logo, y los iconos. No hace falta la lista ul -->
     <nav>
         <div class="logo_perla">Perla Vintage</div>
-        <img src="Logo-Perla.jpeg" alt="Logo-Perla" class="logo-perla" width="100px" height="100px">
+        <img src="img/Logo-Perla.jpeg" alt="Logo-Perla" class="logo-perla">
 
         <!-- NO hace falta agrupar la lista de ul en un div ya que es un contenedor ya -->
         <ul class="links-nav"> 
@@ -25,10 +35,9 @@
         <div class="icons_nav">
             <a href="#">Instagram</a>
             <a href="#">Carrito 🛒</a>
-            <a href="#">TikTok</a>
         </div>
     </nav>
-
+    <main>
 <!-- HERO-SECTION -->
 
     <section class="hero-perla">
@@ -42,7 +51,7 @@
          <p>New York City &middot; Est. 2024</p>
          <h1 class="hero_content">Dressed in <em>another era.</em></h1>
 
-         <p>Handpicked vintage pieces from the 70s throught the 1990s. Each item(garment tells a story - find yours.) </p>
+         <p>Handpicked vintage pieces from the 1970s throught the 2000s. Each item(garment tells a story - find yours.) </p>
 
          <a href="#">Shop the collection</a>
          <a href="#">Our story</a>
@@ -70,7 +79,7 @@
     <section class="new-arrivals">
 
         <p class="section-arrivals">JUST IN</p>
-        <h2 class="new-arrivals">New Arrivals</h2>
+        <h2 class="new-arrivals-title">New Arrivals</h2>
 
         <!-- Metemos en un div ahora los productos nuevos en forma de grid -->
 
@@ -78,7 +87,7 @@
             <div class="products-grid">
                 <!-- Producto1 -->
                 <article class="products">
-                    <img src="blusa-satinada-anos90-5-scaled.jpg" alt="Blouse" width="300px" height="400px">
+                    <img src="img/blusa-satinada-anos90-5-scaled.jpg" alt="Blouse" width="300px" height="400px">
 
                     <p class="product-arrivals">2000s &middot; Made in Italy</p>
                     <h3>Satin Blouse</h3>
@@ -88,7 +97,7 @@
 
                 <!-- Producto2 -->
                 <article class="products">
-                    <img src="como-combinar-look-vintage-con-actual.jpg" alt="Dress" width="200px" height="300px">
+                    <img src="img/como-combinar-look-vintage-con-actual.jpg" alt="Dress" width="200px" height="300px">
 
                     <p class="product-arrivals">1990s &middot; Made in USA</p>
                     <h3>Camel dress</h3>
@@ -98,7 +107,7 @@
 
                 <!-- Producto3 -->
                 <article class="products">
-                    <img src="stylish-woman-with-short-hair-jeans-with-belt-holding-flower-street-woman-white-blouse-with-black-lace-posing-city.jpg" alt="flowers top" width="200px" height="300px">
+                    <img src="img/stylish-woman-with-short-hair-jeans-with-belt-holding-flower-street-woman-white-blouse-with-black-lace-posing-city.jpg" alt="flowers top" width="200px" height="300px">
 
                     <p class="product-arrivals">1990s &middot; Made in New York</p>
                     <h3>Black flowers top</h3>
@@ -108,7 +117,7 @@
 
                 <!-- Producto4  -->
                 <article class="products">
-                    <img src="Tiendas-segunda-mano-y-vintage-Sevilla-1024x683.jpg" alt="sweaters" width="400px" height="300px">
+                    <img src="img/Tiendas-segunda-mano-y-vintage-Sevilla-1024x683.jpg" alt="sweaters" width="400px" height="300px">
 
                     <p class="product2">1980-1990s &middot; Made in Spain & France</p>
                     <h3>Sweaters</h3>
@@ -139,12 +148,14 @@
             <a href="#">MEET THE TEAM</a>
 
         </div>
-
+        
     </section>
 
     <!-- Instagram -->
      <!-- Se agrupan en un div las fotos que luego iran una tras otra? -->
 
+
+    <section class="instagram">
     <a href="#" class="instagram-handle">@PERLA.VINTAGE.NYC</a>
       <div class="instagram-grid">
         <a href="#"><img src="https://images.unsplash.com/photo-1619384259054-ee3ce9d1798c?w=300&h=300&fit=crop" alt="Perla Vintage en Instagram"></a>
@@ -154,7 +165,61 @@
         <a href="#"><img src="https://images.unsplash.com/photo-1634133118079-317c0d007dae?w=300&h=300&fit=crop" alt="Perla Vintage en Instagram"></a>
         <a href="#"><img src="https://images.unsplash.com/photo-1718206485494-0d591a06f1c5?w=300&h=300&fit=crop" alt="Perla Vintage en Instagram"></a>
     </div>
+    </section>
 
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <h2>Perla Vintage Community</h2>
+        <p>Subscribe to receive news and updates.</p>
+        <form>
+            <input class="input-email" type="email" placeholder="Your email address" required>
+            <button class="btn-subscribe" type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    </main>
+
+    <!-- FOOTER -->
+     <!-- Pondremos 3 divs distintos, para 3 columnas diferentes (Marca, Shop, Contact) -->
+     
+    <footer>
+
+        <div class="footer-brand">
+            <img src="img/Logo-Perla.jpeg" alt="Logo-Perla" class="logo-perla">
+            <p>Handpicked vintage clothing.</p>
+            <p>New York City.</p>
+            <!-- aqui iría el logo de instagram -->
+            <a href="#">@PERLA.VINTAGE.NYC</a>
+        </div>
+
+        <div class="footer-shop">
+            <p class="footer-title">SHOP</p>
+            <ul>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Tops & Blouses</a></li>
+                <li><a href="#">Outwear</a></li>
+                <li><a href="#">Bottoms</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">New Arrivals</a></li>
+            </ul>
+
+        </div>
+
+        <div>
+            <p class="footer-info">INFO</p>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Shipping & Returns</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+
+        </div>
+
+        <p class="footer-copy">&copy; 2026 Perla Vintage. Made with &hearts; in New York City.</p> 
+        <!-- Esto está por ver TBD -->
+        
+    </footer>
     
 </body>
 </html>
