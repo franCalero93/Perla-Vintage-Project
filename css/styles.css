@@ -9,7 +9,7 @@
     --color-muted: #8A7968;
     --color-accent: #B8896A;
     --color-card: #F3EDE3;
-    --color-borde: rgba(34, 28, 21, 0.1);
+    --color-border: rgba(34, 28, 21, 0.1);
 
     --font-serif: 'Lora', serif;
     --font-sans: 'DM Sans', sans-serif;
@@ -49,3 +49,399 @@ img {
     max-width: 100%;
 }
 
+
+
+/* ── NAV ── */
+nav {  /*Hacemos que quede fijo el nav*/
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid var(--color-border); /*Le da un borde abajo*/
+    background-color: var(--color-background); /*Color para el fondo*/
+    position: fixed; /*Posicion fija mientras hacemos scroll*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.links-left{
+    display: flex;
+    gap: 2.5rem;
+    justify-self:start;
+}
+
+main {
+    padding-top: 100px; /* aproximadamente la altura de tu nav */
+}
+
+.text_perla { /*Este es el Div de Perla Vintage & New York City*/
+    justify-self: center;
+    text-align: center;
+}
+
+.brand-name { /*p: Perla Vintage*/
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.brand-location { /*p: New York City*/
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    justify-self: end;
+}
+
+.links-right {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.links-left a,
+.links-right a {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+}
+
+.links-left a:hover,
+.links-right a:hover {
+    color: var(--color-text);
+}
+
+.icons_nav {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-left:1.5rem;
+}
+
+.icons_nav a:hover {
+    color: var(--color-text);
+}
+
+/* .logo-perla {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+} */
+
+@media (max-width: 768px) {
+    .text_perla {
+        display: none;
+    }
+    
+    nav {
+        padding: 1rem 1.5rem;
+    }
+    
+    .logo-perla {
+        width: 70px;
+    }
+    
+    .links-nav {
+        gap: 1.2rem;
+    }
+    
+    .links-nav a {
+        font-size: 0.65rem;
+    }
+}
+
+/* ── HERO ── */
+
+
+.hero-img {
+    width: 100%;
+    height: 850px; /* o la altura que quieras */
+    object-fit: cover; /*si se define una altura fija, esto evita que la imagen se deforme*/
+    position: relative;
+    display:block;
+    margin-top: 1rem;
+    
+}
+
+/* 
+@media (max-width: 768px) {
+    .hero-img {
+        height: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-img {
+        height: 450px;
+    }
+} */
+
+/* POR VER */
+
+
+.hero-perla{
+    position: relative;
+    margin-left: -50vw;
+    width: 100vw;
+    left: 50%;
+}
+
+.hero-perla::before{
+    content:"";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.4) 100%); /*los porcentajes indican en qué altura de la imagen empieza cada tono. */
+    z-index: 1;
+}
+
+
+.hero_content {
+    position: absolute;
+    bottom: 4rem;
+    left: 50%; /*echa el texto a la derecha*/
+    transform: translateX(-50%);
+    text-align: center; /*lo centra*/
+    width: 90%;
+    max-width: 600px; /*esto hace que el texto no se haga demasiado ancho en pantallas grandes*/
+    color: white;
+    z-index: 2;
+}
+
+.hero_content p:first-child {  /*Esto es NEW YORK CITY EST 2024*/
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.6); /*esto hace que el texto sea un poco más transparente, menos intenso*/
+    padding: 0.4rem 1rem;
+    color: var(--color-text);
+    display: inline-block;
+    font-family: var(--font-serif);
+}
+
+.hero_header {  /*Dressed in another era*/
+    font-family: var(--font-serif);
+    font-size: 3.8rem;
+    font-weight: 500;
+    color: white;
+    line-height: 1.15; /*esto marca la diferencia entre arriba y abajo, hace como un margen up and down*/
+    margin-bottom: 1.2rem;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+
+
+.hero_content p:last-of-type {  /*Handpicked vintage pieces... */
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.85); /*esto hace que el texto sea un poco más transparente, menos intenso*/
+}
+
+
+.hero_content a {
+    display: inline-block; /**esto hace que el link se comporte como un bloque, lo que nos permite aplicar padding y margin */
+    padding: 0.75rem 1.5rem; /*esto hace que el link tenga un padding de 0.75rem arriba y abajo y 1.5rem a los lados*/
+    margin-right: 1rem; /*esto hace que el link tenga un margen a la derecha de 1rem, para separar los dos links*/
+    border: 1.5px solid white;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+}
+
+.hero_content a:hover {
+    background-color: rgb(204, 197, 197);
+    color: var(--color-text); /*esto hace que el link cambie de color negro al pasar el ratón por encima*/
+}
+
+
+
+
+
+
+/* -- CATEGORIES -- */
+
+.categories{
+    text-align: center;
+    padding: 4rem 2rem; /*4rem arriba y abajo, 2rem a los lados*/
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.categories p{  /*Slowly thoughtfully curated*/
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--color-muted);
+    margin-bottom: 2.5rem;
+}
+
+.categories ul{
+    display: flex; /*Esto hace que el ul se comporte como un contenedor flex*/
+    justify-content: center; /*Esto hace que justifique el contenido del ul*/
+    gap: 1rem; /*Esto elimina el espacio entre los elementos del ul*/
+    
+}
+
+.categories li a{
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    color: var(--color-muted);
+    border: 1px solid var(--color-border);
+    padding: 0.6rem 2rem
+}
+
+.categories li a:hover{
+
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
+}
+
+
+/*--NEW ARRIVALS--*/
+
+.new-arrivals{
+    padding: 5rem 4rem;
+    text-align: center;
+}
+
+.section-arrivals{ /*Just in*/
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.3em;
+}
+
+
+.new-arrivals-title{
+    font-family: var(--font-serif);
+    color: var(--color-text);
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 4rem;
+}
+
+.products-grid{
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.products img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    object-position:top ;
+}
+
+.product-arrivals {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 0.4rem;
+}
+
+.products-img{
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.products h3 { /*Titulo de cada articulo*/
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.2rem;
+}
+
+.price-product {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+}
+
+.view-all {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-text);
+    padding-bottom: 2px;
+    margin: 5rem 0rem;
+}
+
+.view-all:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+
+.story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* .about-us img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-content {
+    background-color: var(--color-card);
+    padding: 4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.story-content p:first-child {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 1.5rem;
+}
+
+.story-content h2 {
+    font-family: var(--font-serif);
+    font-size: 2.3rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+}
+
+.story-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+    margin-bottom: 1.2rem;
+}
+
+.story-content a {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-text);
+    padding-bottom: 3px;
+    margin-top: 1rem;
+} */

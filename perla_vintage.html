@@ -21,20 +21,27 @@
 <!-- Hacemos un nav para el navegador de arriba con las secciones de shop, lookbook... -->
  <!-- Agrupamos en un div el logo, y los iconos. No hace falta la lista ul -->
     <nav>
-        <div class="logo_perla">Perla Vintage</div>
-        <img src="img/Logo-Perla.jpeg" alt="Logo-Perla" class="logo-perla">
-
-        <!-- NO hace falta agrupar la lista de ul en un div ya que es un contenedor ya -->
-        <ul class="links-nav"> 
+        <!-- NO hace falta agrupar la lista de ul en un div ya que es un contenedor ya. Sin embargo los demas links si iran en divs. -->
+        <ul class="links-left"> 
             <li><a href="#">Shop</a></li>
             <li><a href="#">Lookbook</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contact</a></li>
         </ul>
 
-        <div class="icons_nav">
-            <a href="#">Instagram</a>
-            <a href="#">Carrito 🛒</a>
+        <div class="text_perla">
+            <p class="brand-name">Perla Vintage</p>
+            <p class="brand-location">New York City</p>
+        </div>
+        <!-- <img src="img/Logo-Perla.jpeg" alt="Logo-Perla" class="logo-perla"> -->
+
+        <div class="nav-right">
+            <ul class="links-right">
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <div class="icons_nav">
+                <a href="#">Bag 🛒</a>
+            </div>
         </div>
     </nav>
     <main>
@@ -43,15 +50,15 @@
     <section class="hero-perla">
 
         <!-- Dejamos esta imagen de momento hasta elegir alguna de la compañía. Width y height : em? px? -->
-        <img src="https://images.unsplash.com/photo-1634133118060-99de9d0dc039?w=1600&h=900&fit=crop" alt="hero-perla" width="" height="" >
+        <img class="hero-img" src="img/hanger.jpeg" alt="hero-perla">
 
         <!-- metemos en un div el contenido del div (Titulo). El punto arriba -interpunct- se pone con &middot; y luego cualquier punto se pone arriba  -->
 
         <div class="hero_content">   
          <p>New York City &middot; Est. 2024</p>
-         <h1 class="hero_content">Dressed in <em>another era.</em></h1>
+         <h1 class="hero_header">Dressed in <em>another era.</em></h1>
 
-         <p>Handpicked vintage pieces from the 1970s throught the 2000s. Each item(garment tells a story - find yours.) </p>
+         <p>Handpicked vintage pieces from the 1970s throught the 2000s. Each item garment tells a story - find yours. </p>
 
          <a href="#">Shop the collection</a>
          <a href="#">Our story</a>
@@ -63,7 +70,7 @@
      <!-- En otro section metemos las categorias que irán con un "titulo parrafo", y una lista de las 5 categorias -->
 
     <section class="categories">
-        <p><em>Slowly, thoughtfully curated</em></p>
+        <p><em>"Slowly, thoughtfully curated"</em></p>
 
         <ul>
             <li><a href="#">Dresses</a></li>
@@ -84,42 +91,47 @@
         <!-- Metemos en un div ahora los productos nuevos en forma de grid -->
 
 
-            <div class="products-grid">
+        <div class="products-grid">
                 <!-- Producto1 -->
                 <article class="products">
-                    <img src="img/blusa-satinada-anos90-5-scaled.jpg" alt="Blouse" width="300px" height="400px">
+                    <div class="product-img">
+                        <a href="#"><img src="img/purses.jpeg" alt="purse" width="300px" height="400px"></a>
+                    </div>
 
                     <p class="product-arrivals">2000s &middot; Made in Italy</p>
-                    <h3>Satin Blouse</h3>
+                    <h3>Purse</h3>
                     <p class="price-product">$50</p>
 
                 </article>
 
                 <!-- Producto2 -->
                 <article class="products">
-                    <img src="img/como-combinar-look-vintage-con-actual.jpg" alt="Dress" width="200px" height="300px">
-
+                    <div class="product-img">
+                        <a href="#"><img src="img/shoes.jpeg" alt="Dress" width="200px" height="300px"> </a>
+                    </div>    
                     <p class="product-arrivals">1990s &middot; Made in USA</p>
-                    <h3>Camel dress</h3>
+                    <h3>Shoes</h3>
                     <p class="price-product">$160</p>
                     
                 </article>
 
                 <!-- Producto3 -->
                 <article class="products">
-                    <img src="img/stylish-woman-with-short-hair-jeans-with-belt-holding-flower-street-woman-white-blouse-with-black-lace-posing-city.jpg" alt="flowers top" width="200px" height="300px">
-
+                    <div class="product-img">
+                        <a href="#"><img src="img/bagpark.jpeg" alt="flowers top" width="200px" height="300px"> </a>
+                    </div>    
                     <p class="product-arrivals">1990s &middot; Made in New York</p>
-                    <h3>Black flowers top</h3>
+                    <h3>Yellow skirt</h3>
                     <p class="price-product">$75</p>
                     
                 </article>
 
                 <!-- Producto4  -->
                 <article class="products">
-                    <img src="img/Tiendas-segunda-mano-y-vintage-Sevilla-1024x683.jpg" alt="sweaters" width="400px" height="300px">
-
-                    <p class="product2">1980-1990s &middot; Made in Spain & France</p>
+                    <div class="product-img">
+                        <a href="#"><img src="img/hanger2.jpeg" alt="sweaters" width="400px" height="300px"> </a>
+                    </div>    
+                    <p class="product-arrivals">1980-1990s &middot; Made in Spain & France</p>
                     <h3>Sweaters</h3>
                     <p class="price-product">$80</p>
                     
