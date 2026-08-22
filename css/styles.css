@@ -25,6 +25,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden; /*esto evita que aparezca un scroll horizontal si algún elemento se sale del ancho de la pantalla*/
+}
+
 /* ── Base ── */
 body {
     background-color: var(--color-background);
@@ -385,7 +389,7 @@ main {
     text-transform: uppercase;
     border-bottom: 1px solid var(--color-text);
     padding-bottom: 2px;
-    margin: 5rem 0rem;
+    margin: 2.5rem 0rem 3rem 0rem; /*2.5 rem arriba, 0rem a los lados, 3rem abajo*/
 }
 
 .view-all:hover {
@@ -394,26 +398,37 @@ main {
 }
 
 
+
+
+/*STORY PERLA-about us*/
+
 .story {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: grid; /*Habilita que podamos definir cuantas columnas tenemos para la siguiente propiedad */
+    grid-template-columns: 1fr 1fr; /*Hace que el grid tenga dos columnas de igual tamaño*/
+    width: 100vw; /*Hace que el grid tenga el ancho completo de la pantalla*/
+    left: 50%; /*Hace que el grid se mueva a la mitad de la pantalla*/
+    margin-left: -50vw; /*Hace que el grid se mueva a la izquierda la mitad del ancho de la pantalla*/
+    position: relative; /*Hace que el grid se posicione relativo a su contenedor*/
+    height: 500px; /*Hace que el grid tenga una altura de 700px*/
 }
 
-/* .about-us img {
-    width: 100%;
+.story img {
+    width: 100%; /*Hace que la imagen tenga el ancho completo del contenedor, no de la pantalla*/
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /*Hace que la imagen se ajuste al tamaño del contenedor sin deformarse*/
+    display:block; /*Hace que la imagen se muestre como un bloque y no como un elemento en línea*/
+    opacity: 0.9; /*Hace que la imagen sea un poco transparente*/ /*???????????????????????????????????????*/
 }
 
-.story-content {
+.story-content { 
     background-color: var(--color-card);
-    padding: 4rem 5rem;
-    display: flex;
+    padding: 4rem 6rem; /*Hace que se evite quedar pegado a los bordes de su columna, dandole aire*/
+    display: flex; /*Hace que el contenido se muestre como un contenedor flex*/
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /*Controla la alineacion en el eje vertical*/
 }
 
-.story-content p:first-child {
+.story-content p:first-child { /*Our story*/
     font-size: 0.75rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
@@ -425,23 +440,64 @@ main {
     font-family: var(--font-serif);
     font-size: 2.3rem;
     font-weight: 400;
-    line-height: 1.3;
-    margin-bottom: 1.5rem;
+    line-height: 1.25;
+    margin-bottom: 1.8rem;
 }
 
 .story-content p {
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.65; /*Le da mas espacio entre lineas*/
     color: var(--color-muted);
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.3rem; /*Separa un parrafo de otro más*/ 
 }
 
 .story-content a {
-    display: inline-block;
+    display: inline-flex; /*combina dos comportamientos: inline (no ocupa toda la línea, solo el ancho de su contenido) + flex (permite alinear internamente el texto "MEET THE TEAM" y la → como elementos en fila, con control de espaciado entre ellos).*/
+    align-items: center;
+    gap: 0.4rem; /*espacio entre el texto y la flecha*/
     font-size: 0.75rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     border-bottom: 1px solid var(--color-text);
     padding-bottom: 3px;
     margin-top: 1rem;
-} */
+    width: fit-content;
+}
+
+.story-content a:hover{
+    font-weight: 400;
+    font-size: 0.8rem;
+} 
+
+
+
+/*INSTAGRAM GRID*/
+
+.instagram {
+    margin-top: 17rem;
+    text-align: center;
+    padding: 5rem 4rem;
+    
+}
+
+.instagram-handle {
+    display: inline-block;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+}
+
+.instagram-grid img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
