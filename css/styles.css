@@ -363,7 +363,7 @@ main {
     margin-bottom: 0.4rem;
 }
 
-.products-img{
+.product-img{
     aspect-ratio: 3/4;
     overflow: hidden;
     margin-bottom: 1rem;
@@ -409,7 +409,7 @@ main {
     left: 50%; /*Hace que el grid se mueva a la mitad de la pantalla*/
     margin-left: -50vw; /*Hace que el grid se mueva a la izquierda la mitad del ancho de la pantalla*/
     position: relative; /*Hace que el grid se posicione relativo a su contenedor*/
-    height: 500px; /*Hace que el grid tenga una altura de 700px*/
+    height: 700px; /*Hace que el grid tenga una altura de 700px*/
 }
 
 .story img {
@@ -474,7 +474,6 @@ main {
 /*INSTAGRAM GRID*/
 
 .instagram {
-    margin-top: 17rem;
     text-align: center;
     padding: 5rem 4rem;
     
@@ -493,11 +492,28 @@ main {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 0.5rem;
+    max-width: 1600px;
+    margin: 0 auto; /*Esto centra el grid en la pantalla*/
+}
+
+.instagram-grid a{
+    display: block;
+    overflow: hidden; /*Esto hace que si la imagen es más grande que el contenedor, se recorte y no se salga del contenedor*/
+    aspect-ratio: 1/1; /*Esto hace que el contenedor sea cuadrado, independientemente del tamaño de la imagen*/
 }
 
 .instagram-grid img {
     width: 100%;
     height: 100%;
-    aspect-ratio: 1/1;
     object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease; /*Esto hace que la imagen se mueva suavemente al hacer hover*/
 }
+
+.instagram-grid img:hover {
+    transform: scale(1.05); /*Esto hace que la imagen se haga más grande al hacer hover*/
+}
+
+
+/*___NEWSLETTER__*/
+
