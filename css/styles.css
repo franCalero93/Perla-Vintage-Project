@@ -353,6 +353,11 @@ main {
     object-fit: cover;
     margin-bottom: 1rem;
     object-position:top ;
+    transition: transform 0.3s ease; /*Esto hace que la imagen se mueva suavemente al hacer hover*/
+}
+
+.products img:hover {
+    transform: scale(1.05); /*Esto hace que la imagen se haga más grande al hacer hover*/
 }
 
 .product-arrivals {
@@ -481,18 +486,24 @@ main {
 
 .instagram-handle {
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--color-muted);
     margin-bottom: 2rem;
+    transition:all 0.3s ease; /*Esto hace que el cambio de color y tamaño sea suave al hacer hover*/    
+}
+
+.instagram-handle:hover {
+    color: var(--color-accent);
+    transform: scale(1.05); /*Esto hace que el texto se haga más grande al hacer hover*/
 }
 
 .instagram-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0.5rem;
-    max-width: 1600px;
+    display: grid; /*Esto hace que el contenedor se comporte como un grid*/
+    grid-template-columns: repeat(6, 1fr); /*Esto hace que el grid tenga 6 columnas de igual tamaño*/
+    gap: 0.7rem; /*espacio entre las imágenes*/
+    max-width: 1600px; /*Esto hace que el grid no se haga demasiado ancho en pantallas grandes*/
     margin: 0 auto; /*Esto centra el grid en la pantalla*/
 }
 
@@ -507,7 +518,7 @@ main {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease; /*Esto hace que la imagen se mueva suavemente al hacer hover*/
+    transition: 0.3s ease; /*Esto hace que la imagen se mueva suavemente al hacer hover*/
 }
 
 .instagram-grid img:hover {
@@ -516,4 +527,132 @@ main {
 
 
 /*___NEWSLETTER__*/
+
+.newsletter {
+    background-color: var(--color-card);
+    text-align: center;
+    padding: 4rem 2rem; /*4rem arriba y abajo, 2rem a los lados*/
+    border-top: 1px solid var(--color-border);
+}
+
+.newsletter h2 {
+    font-family: var(--font-serif);
+    font-size: 2.3rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.newsletter p {
+    margin-top: 2.5rem;
+    font-size: 0.95rem;
+    line-height: 1.65; /*Le da mas espacio entre lineas*/
+    color: var(--color-muted);
+    margin-bottom: 2.5rem;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    max-width: 480px;
+    margin: 0 auto; /*Esto centra el formulario en la pantalla*/
+    border: 1px solid var(--color-border);
+}
+
+.input-email {
+    flex: 1; /*Esto hace que el input ocupe todo el espacio disponible dentro del formulario, excepto el espacio ocupado por el botón de suscripción*/
+    padding: 0.9rem 1.2rem;
+    font-size: 0.85rem;
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    border:none;
+    outline: none; /*Esto quita el borde azul que aparece al hacer click en el input*/
+    color: var(--color-text);
+}
+
+.btn-subscribe {
+    padding: 0.9rem 1.8rem;
+    background-color: var(--color-text);
+    color: var(--color-background);
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor:pointer; /*Esto hace que el cursor cambie a una mano al pasar por encima del botón*/
+}
+
+.btn-subscribe:hover {
+    background-color: var(--color-accent);
+}
+
+/* ── FOOTER ── */
+
+footer {
+    background-color: var(--color-muted);
+    color: var(--color-background);
+    padding: 3rem 4rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem; /*Esto hace que haya un espacio de 3rem entre las columnas del grid*/  
+}
+
+.footer-brand p{
+    font-size: 0.85rem;
+    line-height: 1.5rem;
+    color: rgba(250, 247, 242, 0.5);
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand a{
+    font-size: 1rem;
+    font-family: var(--font-serif);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(250, 247, 242, 0.5);
+}
+
+.footer-brand a:hover {
+    color: var(--color-text);
+}
+
+.footer-info,
+.footer-title{
+    
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-family: var(--font-serif);
+}
+
+.footer-shop ul,
+footer div ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-shop a,
+footer div a {
+    font-size: 0.8rem;
+    color: rgba(250, 247, 242, 0.6);
+}
+
+.footer-shop a:hover,
+footer div a:hover {
+    color: var(--color-accent);
+}
+
+.footer-copy { /* copyright */
+    grid-column: 1 / -1; /*Esto hace que el copyright ocupe toda la fila del grid, El -1 significa hasta la última columna*/
+    font-size: 0.9rem;
+    color: var(--color-background);
+    border-top: 1px solid rgba(250, 247, 242, 0.1);
+    padding-top: 2rem;
+}
+
+
+
+
 
