@@ -145,28 +145,40 @@ main {
     border-radius: 50%;
 } */
 
+
+/* ____________________MEDIA PARA RESPONSIVE__________________ */
+/* Significa que para maximo 768px de ancho, es decir, es como una condicion que lo que hay dentro es para pantallas menores de 768px */
+
 @media (max-width: 768px) {
-    .text_perla {
-        display: none;
-    }
-    
     nav {
-        padding: 1rem 1.5rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        padding: 1rem 1.2rem;
+        row-gap: 0.8rem;
     }
-    
-    .logo-perla {
-        width: 70px;
+
+    .text_perla {
+        grid-column: 1 / -1;
+        order: -1;
     }
-    
-    .links-nav {
+
+    .links-left {
         gap: 1.2rem;
     }
-    
-    .links-nav a {
+
+    .nav-right {
+        gap: 1.2rem;
+    }
+
+    .links-left a,
+    .links-right a {
         font-size: 0.65rem;
     }
-}
 
+    .links-right {
+        display: none;
+    }
+}
 /* ── HERO ── */
 
 
@@ -179,22 +191,6 @@ main {
     margin-top: 1rem;
     
 }
-
-/* 
-@media (max-width: 768px) {
-    .hero-img {
-        height: 600px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-img {
-        height: 450px;
-    }
-} */
-
-/* POR VER */
-
 
 .hero-perla{
     position: relative;
@@ -273,8 +269,39 @@ main {
 }
 
 
+@media (max-width: 768px) {
+
+    .hero-img{
+        height: 550px;
+    }
+
+    .hero-header{
+        font-size:2.2rem;
+    }
+
+    .hero_content p:last-of-type{
+        font-size: 0.85rem;
+    }
 
 
+    .hero_content a{
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 480px) { /*Para pantallas pequeñas*/
+    .hero-img {
+        height: 450px;
+    }
+
+    .hero_header {
+        font-size: 1.7rem;
+    }
+}
 
 
 /* -- CATEGORIES -- */
@@ -314,6 +341,23 @@ main {
 
     border: 1px solid var(--color-text);
     color: var(--color-text);
+}
+
+
+@media (max-width: 768px) {
+    .categories ul {
+        flex-wrap: wrap;
+        gap: 0.7rem;
+    }
+
+    .categories li a {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.68rem;
+    }
+
+    .categories p {
+        font-size: 1.4rem;
+    }
 }
 
 
@@ -403,6 +447,25 @@ main {
 }
 
 
+@media (max-width: 900px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .new-arrivals {
+        padding: 3rem 1.5rem;
+    }
+
+    .new-arrivals-title {
+        font-size: 1.8rem;
+    }
+}
 
 
 /*STORY PERLA-about us*/
@@ -475,6 +538,26 @@ main {
 } 
 
 
+@media (max-width: 900px) {
+    .story {
+        grid-template-columns: 1fr;
+        height: auto; /* deja de forzar 700px, se adapta al contenido */
+    }
+
+    .story img {
+        height: 350px; /* le damos una altura fija solo a la imagen */
+    }
+
+    .story-content {
+        padding: 3rem 2rem;
+    }
+
+    .story-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
 
 /*INSTAGRAM GRID*/
 
@@ -523,6 +606,23 @@ main {
 
 .instagram-grid img:hover {
     transform: scale(1.05); /*Esto hace que la imagen se haga más grande al hacer hover*/
+}
+
+
+@media (max-width: 900px) {
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .instagram {
+        padding: 3rem 1.5rem;
+    }
 }
 
 
@@ -583,6 +683,23 @@ main {
 
 .btn-subscribe:hover {
     background-color: var(--color-accent);
+}
+
+
+@media (max-width: 480px) {
+    .newsletter form {
+        flex-direction: column;
+        border: none;
+    }
+
+    .input-email {
+        border: 1px solid var(--color-border);
+        margin-bottom: 0.8rem;
+    }
+
+    .btn-subscribe {
+        border: 1px solid var(--color-text);
+    }
 }
 
 /* ── FOOTER ── */
@@ -650,6 +767,31 @@ footer div a:hover {
     color: var(--color-background);
     border-top: 1px solid rgba(250, 247, 242, 0.1);
     padding-top: 2rem;
+}
+
+
+@media (max-width: 768px) {
+    footer {
+        grid-template-columns: 1fr 1fr;
+        padding: 3rem 2rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1; /* la marca ocupa las 2 columnas, arriba del todo */
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand,
+    .footer-shop,
+    footer div {
+        grid-column: 1 / -1;
+    }
 }
 
 
