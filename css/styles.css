@@ -146,39 +146,7 @@ main {
 } */
 
 
-/* ____________________MEDIA PARA RESPONSIVE__________________ */
-/* Significa que para maximo 768px de ancho, es decir, es como una condicion que lo que hay dentro es para pantallas menores de 768px */
 
-@media (max-width: 768px) {
-    nav {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        padding: 1rem 1.2rem;
-        row-gap: 0.8rem;
-    }
-
-    .text_perla {
-        grid-column: 1 / -1;
-        order: -1;
-    }
-
-    .links-left {
-        gap: 1.2rem;
-    }
-
-    .nav-right {
-        gap: 1.2rem;
-    }
-
-    .links-left a,
-    .links-right a {
-        font-size: 0.65rem;
-    }
-
-    .links-right {
-        display: none;
-    }
-}
 /* ── HERO ── */
 
 
@@ -269,41 +237,6 @@ main {
 }
 
 
-@media (max-width: 768px) {
-
-    .hero-img{
-        height: 550px;
-    }
-
-    .hero-header{
-        font-size:2.2rem;
-    }
-
-    .hero_content p:last-of-type{
-        font-size: 0.85rem;
-    }
-
-
-    .hero_content a{
-        display: block;
-        margin-right: 0;
-        margin-bottom: 0.8rem;
-        text-align: center;
-    }
-
-}
-
-@media (max-width: 480px) { /*Para pantallas pequeñas*/
-    .hero-img {
-        height: 450px;
-    }
-
-    .hero_header {
-        font-size: 1.7rem;
-    }
-}
-
-
 /* -- CATEGORIES -- */
 
 .categories{
@@ -344,23 +277,6 @@ main {
 }
 
 
-@media (max-width: 768px) {
-    .categories ul {
-        flex-wrap: wrap;
-        gap: 0.7rem;
-    }
-
-    .categories li a {
-        padding: 0.5rem 1.2rem;
-        font-size: 0.68rem;
-    }
-
-    .categories p {
-        font-size: 1.4rem;
-    }
-}
-
-
 /*--NEW ARRIVALS--*/
 
 .new-arrivals{
@@ -397,7 +313,7 @@ main {
     object-fit: cover;
     margin-bottom: 1rem;
     object-position:top ;
-    transition: transform 0.3s ease; /*Esto hace que la imagen se mueva suavemente al hacer hover*/
+    transition: transform 0.8s ease; /*Esto hace que la imagen se mueva suavemente al hacer hover*/
 }
 
 .products img:hover {
@@ -431,7 +347,7 @@ main {
     color: var(--color-muted);
 }
 
-.view-all {
+.view-all { /*Este es el link de View All*/
     display: inline-block;
     font-size: 0.7rem;
     letter-spacing: 0.22em;
@@ -446,26 +362,6 @@ main {
     border-color: var(--color-accent);
 }
 
-
-@media (max-width: 900px) {
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 500px) {
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .new-arrivals {
-        padding: 3rem 1.5rem;
-    }
-
-    .new-arrivals-title {
-        font-size: 1.8rem;
-    }
-}
 
 
 /*STORY PERLA-about us*/
@@ -538,27 +434,6 @@ main {
 } 
 
 
-@media (max-width: 900px) {
-    .story {
-        grid-template-columns: 1fr;
-        height: auto; /* deja de forzar 700px, se adapta al contenido */
-    }
-
-    .story img {
-        height: 350px; /* le damos una altura fija solo a la imagen */
-    }
-
-    .story-content {
-        padding: 3rem 2rem;
-    }
-
-    .story-content h2 {
-        font-size: 1.8rem;
-    }
-}
-
-
-
 /*INSTAGRAM GRID*/
 
 .instagram {
@@ -608,22 +483,6 @@ main {
     transform: scale(1.05); /*Esto hace que la imagen se haga más grande al hacer hover*/
 }
 
-
-@media (max-width: 900px) {
-    .instagram-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .instagram-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .instagram {
-        padding: 3rem 1.5rem;
-    }
-}
 
 
 /*___NEWSLETTER__*/
@@ -683,23 +542,6 @@ main {
 
 .btn-subscribe:hover {
     background-color: var(--color-accent);
-}
-
-
-@media (max-width: 480px) {
-    .newsletter form {
-        flex-direction: column;
-        border: none;
-    }
-
-    .input-email {
-        border: 1px solid var(--color-border);
-        margin-bottom: 0.8rem;
-    }
-
-    .btn-subscribe {
-        border: 1px solid var(--color-text);
-    }
 }
 
 /* ── FOOTER ── */
@@ -763,14 +605,87 @@ footer div a:hover {
 
 .footer-copy { /* copyright */
     grid-column: 1 / -1; /*Esto hace que el copyright ocupe toda la fila del grid, El -1 significa hasta la última columna*/
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: var(--color-background);
     border-top: 1px solid rgba(250, 247, 242, 0.1);
     padding-top: 2rem;
+    font-family: var(--font-serif);
+}
+
+
+
+
+
+/* ____________________MEDIA PARA RESPONSIVE__________________ */
+/* Significa que para maximo 900px de ancho, es decir, es como una condicion que lo que hay dentro es para pantallas menores de 900px */
+
+
+
+
+@media (max-width: 900px) { /*Esto es para pantallas menores de 900px, es decir, tablets y móviles */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    
+    .story {
+        grid-template-columns: 1fr;
+        height: auto; /* deja de forzar 700px, se adapta al contenido */
+    }
+
+    .story img {
+        height: 350px; /* le damos una altura fija solo a la imagen */
+    }
+
+    .story-content {
+        padding: 3rem 2rem;
+    }
+
+    .story-content h2 {
+        font-size: 1.8rem;
+    }
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
 }
 
 
 @media (max-width: 768px) {
+
+    main{
+        padding-top: 130px; /* aproximadamente la altura de tu nav */
+    }
+    nav {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        padding: 0.6rem 1.2rem;
+        row-gap: 0.4rem;
+    }
+
+    .text_perla {
+        grid-column: 1 / -1;
+        order: -1;
+    }
+
+    .links-left {
+        gap: 1.2rem;
+    }
+
+    .nav-right {
+        gap: 1.2rem;
+    }
+
+    .links-left a,
+    .links-right a {
+        font-size: 0.65rem;
+    }
+
+    .links-right {
+        display: none;
+    }
+
     footer {
         grid-template-columns: 1fr 1fr;
         padding: 3rem 2rem;
@@ -780,9 +695,89 @@ footer div a:hover {
         grid-column: 1 / -1; /* la marca ocupa las 2 columnas, arriba del todo */
         margin-bottom: 1rem;
     }
+
+     .hero-img{
+        height: 550px;
+    }
+
+    .hero_header{
+        font-size:2.2rem;
+    }
+
+    .hero_content p:last-of-type{
+        font-size: 0.85rem;
+    }
+
+
+    .hero_content a{
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+        text-align: center;
+    }
+
+    .categories ul {
+        flex-wrap: wrap;
+        gap: 0.7rem;
+    }
+
+    .categories li a {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.68rem;
+    }
+
+    .categories p {
+        font-size: 1.4rem;
+    }
+
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 500px) { 
+
+     .hero-img {
+        height: 450px;
+    }
+
+    .hero_header {
+        font-size: 1.7rem;
+    }
+
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .new-arrivals {
+        padding: 3rem 1.5rem;
+    }
+
+    .new-arrivals-title {
+        font-size: 1.8rem;
+    }
+
+     .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .instagram {
+        padding: 3rem 1.5rem;
+    }
+
+        .newsletter form {
+        flex-direction: column;
+        border: none;
+    }
+
+    .input-email {
+        border: 1px solid var(--color-border);
+        margin-bottom: 0.8rem;
+    }
+
+    .btn-subscribe {
+        border: 1px solid var(--color-text);
+    }
+
     footer {
         grid-template-columns: 1fr;
     }
