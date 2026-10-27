@@ -614,6 +614,48 @@ footer div a:hover {
 
 
 
+.hamburger {
+    display: none; /* Oculta el botón de hamburguesa por defecto */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+.menu-movil{
+    display: none; /* Oculta el menú móvil por defecto */
+    position: fixed;
+    top: 70px; /* Ajusta según la altura de tu nav */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem 1.2rem;
+    z-index: 99; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+.menu-movil ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-movil a{
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    /* padding: 1rem 2rem; Espaciado interno para cada enlace */
+}
+
+.menu-movil.abierto {
+    display: block;
+}
+
+
+
+
 
 
 /* ____________________MEDIA PARA RESPONSIVE__________________ */
@@ -655,33 +697,32 @@ footer div a:hover {
 @media (max-width: 768px) {
 
     main{
-        padding-top: 130px; /* aproximadamente la altura de tu nav */
+        padding-top: 64px; /* aproximadamente la altura de tu nav */
     }
     
     nav {
         grid-template-columns: 1fr auto 1fr;
         padding: 0.8rem 1.2rem;
-        row-gap: 0;
     }
 
     .text_perla {
         grid-column: 2;
         justify-self: center;
-        order: 0;
     }
 
-    .links-left {
+    .links-left,
+    .links-right {
         display: none;
     }
 
     .nav-right {
-        grid-column:2;
+        grid-column:3;
         justify-self: end;
+        gap:1rem
     }
 
-    .links-right,
     .icons_nav {
-        display: none;
+        margin-left: 0; /*Elimina el margen izquierdo del contenedor de iconos*/
     }
 
     .hamburger {
@@ -789,44 +830,6 @@ footer div a:hover {
     footer div {
         grid-column: 1 / -1;
     }
-}
-
-.hamburguer {
-    display: none; /* Oculta el botón de hamburguesa por defecto */
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--color-text);
-}
-
-.menu-movil{
-    display: none; /* Oculta el menú móvil por defecto */
-    position: fixed;
-    top: 70px; /* Ajusta según la altura de tu nav */
-    left: 0;
-    width: 100%;
-    background-color: var(--color-background);
-    border-bottom: 1px solid var(--color-border);
-    z-index: 99; /* Asegura que el menú esté por encima de otros elementos */
-}
-
-.menu-movil ul{
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.menu-movil a{
-    font-size: 0.85rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    /* padding: 1rem 2rem; Espaciado interno para cada enlace */
-}
-
-.menu-movil.abierto {
-    display: block;
 }
 
 
