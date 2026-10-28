@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perla Vintage NYC</title>
+    <title>Perla Vintage NYC | Curated Vintage</title>
+    <meta name="description" content="Handpicked vintage clothing from the 1970s through the 2000s, curated by Perla Vintage in New York City.">
+    <meta property="og:type" content="website"> <!-- Indica que la página es un sitio web -->
+    <meta property="og:site_name" content="Perla Vintage"> <!-- Nombre del sitio web -->
+    <meta property="og:title" content="Perla Vintage NYC | Curated Vintage Clothing">
+    <meta property="og:description" content="Handpicked vintage clothing from the 1970s through the 2000s, curated by Perla Vintage in New York City.">
 
     <!-- Link CSS external -->
 
@@ -12,7 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Link Font Awesome para los iconos -->
-
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/Logo-Perla.jpeg" type="image/x-icon">
@@ -24,6 +28,7 @@
 <!-- NAV PRINCIPAL -->
 <!-- Hacemos un nav para el navegador de arriba con las secciones de shop, lookbook... -->
  <!-- Agrupamos en un div el logo, y los iconos. No hace falta la lista ul -->
+    <header>
     <nav>
         <!-- NO hace falta agrupar la lista de ul en un div ya que es un contenedor ya. Sin embargo los demas links si iran en divs. -->
         <ul class="links-left"> 
@@ -39,14 +44,18 @@
 
         <div class="nav-right">
             <ul class="links-right">
-                <li><a href="#">About us</a></li>
+                <li><a href="#our-story">About us</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
 
             <div class="icons_nav">
                 <a href="#">🛒</a>
             </div>
-            <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"> ☰
+            <button class="hamburger" id="hamburger"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="menu-movil">
+                ☰
                 <span></span>
                 <span></span>
                 <span></span>
@@ -59,10 +68,11 @@
         <ul>
             <li><a href="#">Shop</a></li>
             <li><a href="#">Lookbook</a></li>
-            <li><a href="#">About us</a></li>
+            <li><a href="#our-story">About us</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </div>
+    </header>
      
      
      <main>
@@ -71,7 +81,7 @@
     <section class="hero-perla">
 
         <!-- Dejamos esta imagen de momento hasta elegir alguna de la compañía. Width y height : em? px? -->
-        <img class="hero-img" src="img/hanger.jpeg" alt="hero-perla">
+        <img class="hero-img" src="img/hanger.jpeg" alt="Clothing rack with garments against a white wall">
 
         <!-- metemos en un div el contenido del div (Titulo). El punto arriba -interpunct- se pone con &middot; y luego cualquier punto se pone arriba  -->
 
@@ -79,10 +89,10 @@
          <p>New York City &middot; Est. 2024</p>
          <h1 class="hero_header">Dressed in <em>another era.</em></h1>
 
-         <p>Handpicked vintage pieces from the 1970s throught the 2000s. Each item garment tells a story - find yours. </p>
+         <p>Handpicked vintage pieces from the 1970s through the 2000s. Each item garment tells a story - find yours. </p>
 
          <a href="#">Shop the collection</a>
-         <a href="#">Our story</a>
+         <a href="#our-story">Our story</a>
          
         </div>
     </section>
@@ -90,7 +100,7 @@
     <!-- TAGLINE CATEGORIES -->
      <!-- En otro section metemos las categorias que irán con un "titulo parrafo", y una lista de las 5 categorias -->
 
-    <section class="categories">
+    <section class="categories" aria-label="Clothing categories">
         <p><em>"Slowly, thoughtfully curated"</em></p>
 
         <ul>
@@ -116,7 +126,7 @@
                 <!-- Producto1 -->
                 <article class="products">
                     <div class="product-img">
-                        <a href="#"><img src="img/purses.jpeg" alt="purse" width="" height=""></a>
+                        <a href="#"><img src="img/purses.jpeg" alt="Burgundy handbag with a black purse and accessories" width="1536" height="2048"></a>
                     </div>
 
                     <p class="product-arrivals">2000s &middot; Made in Italy</p>
@@ -128,7 +138,7 @@
                 <!-- Producto2 -->
                 <article class="products">
                     <div class="product-img">
-                        <a href="#"><img src="img/shoes.jpeg" alt="Dress" width="" height=""> </a>
+                        <a href="#"><img src="img/shoes.jpeg" alt="Assorted shoes on a table" width="1536" height="2048"> </a>
                     </div>    
                     <p class="product-arrivals">1990s &middot; Made in USA</p>
                     <h3>Shoes</h3>
@@ -139,7 +149,7 @@
                 <!-- Producto3 -->
                 <article class="products">
                     <div class="product-img">
-                        <a href="#"><img src="img/bagpark.jpeg" alt="flowers top" width="200px" height="300px"> </a>
+                        <a href="#"><img src="img/bagpark.jpeg" alt="Person holding a burgundy handbag and several garments" width="1070" height="1427"> </a>
                     </div>    
                     <p class="product-arrivals">1990s &middot; Made in New York</p>
                     <h3>Yellow skirt</h3>
@@ -150,7 +160,7 @@
                 <!-- Producto4  -->
                 <article class="products">
                     <div class="product-img">
-                        <a href="#"><img src="img/hanger2.jpeg" alt="sweaters" width="400px" height="300px"> </a>
+                        <a href="#"><img src="img/hanger2.jpeg" alt="Assorted garments hanging rack" width="1536" height="2048"> </a>
                     </div>    
                     <p class="product-arrivals">1980-1990s &middot; Made in Spain & France</p>
                     <h3>Sweaters</h3>
@@ -166,8 +176,8 @@
 
     <!-- OUR STORY -->
 
-    <section class="story">
-        <img src="img/AboutUs.jpeg" alt="Perla story">
+    <section class="story" id="our-story">
+        <img src="img/AboutUs.jpeg" alt="Two women seated at a table with clothing and accessories">
 
         <div class="story-content">
             <p>OUR STORY</p>
@@ -188,17 +198,17 @@
      <!-- Se agrupan en un div las fotos que luego iran una tras otra? -->
 
 
-    <section class="instagram">
+    <section class="instagram" aria-label="Instagram gallery">
     <a href="https://www.instagram.com/perla.vintage.nyc/?hl=en" target="_blank" class="instagram-handle">
             <i class="fa-brands fa-instagram"></i> PERLA.VINTAGE.NYC </a> <!--La i significa icono -->
     
       <div class="instagram-grid">
-        <a href="#"><img src="img/Soph2.jpeg" alt="Perla Vintage en Instagram"></a>
-        <a href="#"><img src="img/hanger.jpeg" alt="Perla Vintage en Instagram"></a>
-        <a href="#"><img src="https://images.unsplash.com/photo-1557771551-634f8d68b0a5?w=300&h=300&fit=crop" alt="Perla Vintage en Instagram"></a>
-        <a href="#"><img src="https://images.unsplash.com/photo-1494795817488-f572f2a30c87?w=300&h=300&fit=crop" alt="Perla Vintage en Instagram"></a>
-        <a href="#"><img src="https://images.unsplash.com/photo-1634133118079-317c0d007dae?w=300&h=300&fit=crop" alt="Perla Vintage en Instagram"></a>
-        <a href="#"><img src="img/Logo-Perla.jpeg" alt="Perla Vintage en Instagram"></a>
+        <a href="#"><img src="img/Soph2.jpeg" alt="Woman browsing garments on a rack"></a>
+        <a href="#"><img src="img/hanger.jpeg" alt="Garments hanging on a rack against a white wall"></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1557771551-634f8d68b0a5?w=300&h=300&fit=crop" alt="Woman sitting outdoors in a light floral dress"></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1494795817488-f572f2a30c87?w=300&h=300&fit=crop" alt="People and clothing racks at an outdoor market"></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1634133118079-317c0d007dae?w=300&h=300&fit=crop" alt="Clothing racks behind a white car at an outdoor market"></a>
+        <a href="#"><img src="img/Logo-Perla.jpeg" alt="Perla Vintage logo"></a>
     </div>
     </section>
 
@@ -208,7 +218,8 @@
         <h2>Community</h2>
         <p>Subscribe to receive news, pop up events and updates.</p>
         <form>
-            <input class="input-email" type="email" placeholder="Your email address" required>
+            <label class="visually-hidden" for="newsletter-email">Your email address</label>
+            <input class="input-email" id="newsletter-email" type="email" placeholder="Your email address" required>
             <button class="btn-subscribe" type="submit">Subscribe</button>
         </form>
     </section>
@@ -245,7 +256,7 @@
         <div>
             <p class="footer-info">INFO</p>
             <ul>
-                <li><a href="#">About Us</a></li>
+                <li><a href="#our-story">About Us</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Shipping & Returns</a></li>
                 <li><a href="#">FAQ</a></li>

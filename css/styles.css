@@ -6,10 +6,12 @@
     --color-background: #FAF7F2;
     --color-text: #221C15;
     --color-primary: #221C15;
-    --color-muted: #8A7968;
-    --color-accent: #B8896A;
+    --color-muted: #756456;
+    --color-accent: #80593F;
+    --color-accent-on-dark: #FAE3CF;
     --color-card: #F3EDE3;
-    --color-border: rgba(34, 28, 21, 0.1);
+    --color-divider: rgba(34, 28, 21, 0.1);
+    --color-border: rgba(34, 28, 21, 0.5);
 
     --font-serif: 'Lora', serif;
     --font-sans: 'DM Sans', sans-serif;
@@ -60,7 +62,7 @@ nav {  /*Hacemos que quede fijo el nav*/
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     padding: 1rem 3rem;
-    border-bottom: 1px solid var(--color-border); /*Le da un borde abajo*/
+    border-bottom: 1px solid var(--color-divider); /*Le da un borde abajo*/
     background-color: var(--color-background); /*Color para el fondo*/
     position: fixed; /*Posicion fija mientras hacemos scroll*/
     top: 0;
@@ -162,16 +164,14 @@ main {
 
 .hero-perla{
     position: relative;
-    margin-left: -50vw;
-    width: 100vw;
-    left: 50%;
+    width: 100%;
 }
 
 .hero-perla::before{
     content:"";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.4) 100%); /*los porcentajes indican en qué altura de la imagen empieza cada tono. */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.65) 100%); /*los porcentajes indican en qué altura de la imagen empieza cada tono. */
     z-index: 1;
 }
 
@@ -216,7 +216,7 @@ main {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.85); /*esto hace que el texto sea un poco más transparente, menos intenso*/
+    color: white;
 }
 
 
@@ -242,8 +242,8 @@ main {
 .categories{
     text-align: center;
     padding: 4rem 2rem; /*4rem arriba y abajo, 2rem a los lados*/
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
+    border-top: 1px solid var(--color-divider);
+    border-bottom: 1px solid var(--color-divider);
 }
 
 .categories p{  /*Slowly thoughtfully curated*/
@@ -349,7 +349,7 @@ main {
 
 .view-all { /*Este es el link de View All*/
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     border-bottom: 1px solid var(--color-text);
@@ -369,11 +369,11 @@ main {
 .story {
     display: grid; /*Habilita que podamos definir cuantas columnas tenemos para la siguiente propiedad */
     grid-template-columns: 1fr 1fr; /*Hace que el grid tenga dos columnas de igual tamaño*/
-    width: 100vw; /*Hace que el grid tenga el ancho completo de la pantalla*/
-    left: 50%; /*Hace que el grid se mueva a la mitad de la pantalla*/
-    margin-left: -50vw; /*Hace que el grid se mueva a la izquierda la mitad del ancho de la pantalla*/
+    width: 95%;
+    margin-inline: auto;
     position: relative; /*Hace que el grid se posicione relativo a su contenedor*/
-    height: 700px; /*Hace que el grid tenga una altura de 700px*/
+    height: auto;
+    min-height: 600px;
 }
 
 .story img {
@@ -426,11 +426,14 @@ main {
     padding-bottom: 3px;
     margin-top: 1rem;
     width: fit-content;
+    transition: transform 1s ease; /*ease hace que la animación sea más suave, 1s es la duración de la animación*/
 }
 
 .story-content a:hover{
     font-weight: 400;
-    font-size: 0.8rem;
+    font-size: 0.77rem;
+    color: var(--color-muted);
+    transform: translateX(5px); /*Esto hace que el link se mueva a la derecha al hacer hover*/
 } 
 
 
@@ -517,6 +520,18 @@ main {
     border: 1px solid var(--color-border);
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .input-email {
     flex: 1; /*Esto hace que el input ocupe todo el espacio disponible dentro del formulario, excepto el espacio ocupado por el botón de suscripción*/
     padding: 0.9rem 1.2rem;
@@ -526,6 +541,16 @@ main {
     border:none;
     outline: none; /*Esto quita el borde azul que aparece al hacer click en el input*/
     color: var(--color-text);
+}
+
+.input-email:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -2px;
+}
+
+.input-email::placeholder {
+    color: var(--color-muted);
+    opacity: 1;
 }
 
 .btn-subscribe {
@@ -558,7 +583,7 @@ footer {
 .footer-brand p{
     font-size: 0.85rem;
     line-height: 1.5rem;
-    color: rgba(250, 247, 242, 0.5);
+    color: var(--color-background);
     margin-bottom: 1.5rem;
 }
 
@@ -567,11 +592,11 @@ footer {
     font-family: var(--font-serif);
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(250, 247, 242, 0.5);
+    color: var(--color-background);
 }
 
 .footer-brand a:hover {
-    color: var(--color-text);
+    color: var(--color-accent-on-dark);
 }
 
 .footer-info,
@@ -579,7 +604,7 @@ footer {
     
     font-size: 1rem;
     line-height: 1.5rem;
-    color: var(--color-text);
+    color: var(--color-background);
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     font-family: var(--font-serif);
@@ -595,12 +620,12 @@ footer div ul {
 .footer-shop a,
 footer div a {
     font-size: 0.8rem;
-    color: rgba(250, 247, 242, 0.6);
+    color: var(--color-background);
 }
 
 .footer-shop a:hover,
 footer div a:hover {
-    color: var(--color-accent);
+    color: var(--color-accent-on-dark);
 }
 
 .footer-copy { /* copyright */
@@ -672,7 +697,9 @@ footer div a:hover {
     
     .story {
         grid-template-columns: 1fr;
+        width: 100%;
         height: auto; /* deja de forzar 700px, se adapta al contenido */
+        min-height: 0;
     }
 
     .story img {
@@ -754,8 +781,9 @@ footer div a:hover {
 
     .hero_content a{
         display: block;
-        margin-right: 0;
-        margin-bottom: 0.8rem;
+        width: fit-content;
+        margin: 0 auto 0.6rem;
+        padding: 0.55rem 1rem;
         text-align: center;
     }
 
@@ -772,6 +800,18 @@ footer div a:hover {
     .categories p {
         font-size: 1.4rem;
     }
+
+    .newsletter h2 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+    .newsletter p {
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+}
 
 }
 
@@ -831,10 +871,3 @@ footer div a:hover {
         grid-column: 1 / -1;
     }
 }
-
-
-
-
-
-
-
