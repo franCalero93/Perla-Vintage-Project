@@ -58,7 +58,7 @@ img {
 
 
 /* ── NAV ── */
-nav {  /*Hacemos que quede fijo el nav*/
+header > nav {  /*Hacemos que quede fijo el nav*/
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     padding: 1rem 3rem;
@@ -608,6 +608,7 @@ footer {
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     font-family: var(--font-serif);
+    letter-spacing: 0.3em;
 }
 
 .footer-shop ul,
@@ -727,7 +728,7 @@ footer div a:hover {
         padding-top: 64px; /* aproximadamente la altura de tu nav */
     }
     
-    nav {
+    header > nav {
         grid-template-columns: 1fr auto 1fr;
         padding: 0.8rem 1.2rem;
     }
@@ -737,22 +738,26 @@ footer div a:hover {
         justify-self: center;
     }
 
+    .nav-right {
+        display: contents;
+    }
+
     .links-left,
     .links-right {
         display: none;
     }
 
-    .nav-right {
-        grid-column:3;
-        justify-self: end;
-        gap:1rem
-    }
-
     .icons_nav {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
         margin-left: 0; /*Elimina el margen izquierdo del contenedor de iconos*/
     }
 
     .hamburger {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
         display: block;
     }
 

@@ -32,14 +32,14 @@
     <nav>
         <!-- NO hace falta agrupar la lista de ul en un div ya que es un contenedor ya. Sin embargo los demas links si iran en divs. -->
         <ul class="links-left"> 
-            <li><a href="#">Shop</a></li>
+            <li><a href="shop.html">Shop</a></li>
             <li><a href="#">Lookbook</a></li>
         </ul>
 
-        <div class="text_perla">
+        <a class="text_perla" href="perla_vintage.html">
             <p class="brand-name">Perla Vintage</p>
             <p class="brand-location">New York City</p>
-        </div>
+        </a>
         <!-- <img src="img/Logo-Perla.jpeg" alt="Logo-Perla" class="logo-perla"> -->
 
         <div class="nav-right">
@@ -49,7 +49,7 @@
             </ul>
 
             <div class="icons_nav">
-                <a href="#">🛒</a>
+                <a href="#" aria-label="Shopping bag (coming soon)">🛒</a>
             </div>
             <button class="hamburger" id="hamburger"
                     aria-label="Abrir menú"
@@ -66,7 +66,7 @@
     <!-- Menu movil fuera del nav -->
      <div class="menu-movil" id="menu-movil">
         <ul>
-            <li><a href="#">Shop</a></li>
+            <li><a href="shop.html">Shop</a></li>
             <li><a href="#">Lookbook</a></li>
             <li><a href="#our-story">About us</a></li>
             <li><a href="#">Contact</a></li>
@@ -170,7 +170,7 @@
         
             </div>
 
-            <a href="#" class="view-all">View All Pieces</a>
+            <a href="shop.html" class="view-all">View All Pieces</a>
 
     </section>
 
@@ -236,19 +236,22 @@
             <p>Handpicked vintage clothing.</p>
             <p>New York City.</p>
             <!-- aqui iría el logo de instagram -->
-            <a href="https://www.instagram.com/perla.vintage.nyc/?hl=en" target="_blank">
-                <i class="fa-brands fa-instagram"></i> PERLA.VINTAGE.NYC </a>
+            <a href="https://www.instagram.com/perla.vintage.nyc/?hl=en" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i> PERLA.VINTAGE.NYC
+            </a>
         </div>
 
         <div class="footer-shop">
             <p class="footer-title">SHOP</p>
             <ul>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Tops & Blouses</a></li>
-                <li><a href="#">Outwear</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Accessories</a></li>
-                <li><a href="#">New Arrivals</a></li>
+                <li><a href="shop.html#new-arrivals">New Arrivals</a></li>
+                <li><a href="shop.html#tops">Tops</a></li>
+                <li><a href="shop.html#sweaters">Sweaters</a></li>
+                <li><a href="shop.html#dresses">Dresses</a></li>
+                <li><a href="shop.html#jackets-coats">Outwear</a></li>
+                <li><a href="shop.html#bottoms">Bottoms</a></li>
+                <li><a href="shop.html#shoes">Shoes</a></li>
+                <li><a href="shop.html#accessories">Accessories</a></li>
             </ul>
 
         </div>
@@ -264,8 +267,8 @@
 
         </div>
 
-        <p class="footer-copy">&copy; 2026 Perla Vintage. Made with &hearts; in New York City.</p> 
-        <!-- Esto está por ver TBD -->
+        <p class="footer-copy">&copy; 2024 Perla Vintage. Made with &hearts; in New York City.</p> 
+    
         
     </footer>
 
