@@ -7,7 +7,7 @@
     <title>The Shop | Perla Vintage NYC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/shop.css">
@@ -59,9 +59,14 @@
 
     <main class="shop-page">
         <section class="shop-intro" aria-labelledby="shop-title">
-            <h1 id="shop-title">The Shop</h1>
-            <p>A considered edit of vintage pieces, chosen to be worn and loved again.</p>
+            <h1 id="shop-title">THE SHOP</h1>
         </section>
+
+        <figure class="shop-editorial">
+            <img src="img/Tiendas-segunda-mano-y-vintage-Sevilla-1024x683.jpg"
+                 alt="Colorful vintage sweaters and jackets displayed on a rack"
+                 width="1024" height="683">
+        </figure>
 
         <nav class="shop-category-nav" aria-label="Shop categories">
             <ul>
@@ -74,19 +79,39 @@
                 <li><a href="#shoes">Shoes</a></li>
                 <li><a href="#accessories">Accessories</a></li>
             </ul>
+            <div class="shop-category-picker" id="shop-category-picker">
+                <button class="shop-category-picker-trigger" id="shop-category-picker-trigger"
+                        type="button" aria-expanded="false"
+                        aria-controls="shop-category-options"
+                        aria-label="Choose category: New Arrivals">
+                    <span id="shop-category-current">New Arrivals</span>
+                    <span class="shop-category-picker-icon" aria-hidden="true">⌄</span>
+                </button>
+                <ul class="shop-category-options" id="shop-category-options" hidden>
+                    <li><button class="shop-category-option" type="button" data-category="new-arrivals" aria-pressed="true">New Arrivals</button></li>
+                    <li><button class="shop-category-option" type="button" data-category="tops" aria-pressed="false">Tops</button></li>
+                    <li><button class="shop-category-option" type="button" data-category="sweaters" aria-pressed="false">Sweaters</button></li>
+                    <li><button class="shop-category-option" type="button" data-category="dresses" aria-pressed="false">Dresses</button></li>
+                    <li><button class="shop-category-option" type="button" data-category="jackets-coats" aria-pressed="false">Outwear</button></li>
+                    <li><button class="shop-category-option" type="button" data-category="bottoms" aria-pressed="false">Bottoms</button></li>
+                    <li><button class="shop-category-option" type="button" data-category="shoes" aria-pressed="false">Shoes</button></li>
+                    <li><button class="shop-category-option" type="button" data-category="accessories" aria-pressed="false">Accessories</button></li>
+                </ul>
+            </div>
         </nav>
 
-        <p class="shop-preview-note">Product names and prices are examples for this first catalog preview.</p>
+        <p class="shop-preview-note">Category selection filters these sample products. Product pages and cart are not connected yet.</p>
 
         <section class="shop-category" id="new-arrivals" aria-labelledby="new-arrivals-title">
-            <h2 id="new-arrivals-title">New Arrivals</h2>
-            <div class="products-grid">
+            <h2 id="new-arrivals-title" class="visually-hidden">New Arrivals</h2>
+            <div class="products-grid shop-product-grid">
                 <article class="products">
                     <div class="product-img">
                         <img src="img/purses.jpeg" alt="Burgundy tote bag displayed with a black purse and accessories" width="1536" height="2048">
                     </div>
                     <h3>Burgundy Tote Bag</h3>
                     <p class="price-product">$50</p>
+                    <button class="add-to-cart" type="button" disabled aria-label="Add Burgundy Tote Bag to cart (coming soon)">ADD TO CART</button>
                 </article>
                 <article class="products">
                     <div class="product-img">
@@ -94,97 +119,129 @@
                     </div>
                     <h3>Assorted Vintage Shoes</h3>
                     <p class="price-product">$85</p>
+                    <button class="add-to-cart" type="button" disabled aria-label="Add Assorted Vintage Shoes to cart (coming soon)">ADD TO CART</button>
+                </article>
+                <article class="products">
+                    <div class="product-img">
+                        <img src="img/pexels-brandon-retratos-768594541-35035639.jpg" alt="Model wearing a black leather jacket and skirt on a city street" width="2099" height="4000" loading="lazy">
+                    </div>
+                    <h3>Product details coming soon</h3>
+                    <p class="price-product">Price coming soon</p>
+                    <button class="add-to-cart" type="button" disabled aria-label="Product details coming soon">ADD TO CART</button>
+                </article>
+                <article class="products">
+                    <div class="product-img">
+                        <img src="img/pexels-brandon-retratos-768594541-36152612.jpg" alt="Model wearing a white top, patterned scarf, and jeans" width="2250" height="4000" loading="lazy">
+                    </div>
+                    <h3>Product details coming soon</h3>
+                    <p class="price-product">Price coming soon</p>
+                    <button class="add-to-cart" type="button" disabled aria-label="Product details coming soon">ADD TO CART</button>
+                </article>
+                <article class="products">
+                    <div class="product-img">
+                        <img src="img/pexels-carrverg-27082482.jpg" alt="Model wearing a red hat, white blouse, and burgundy trousers" width="2768" height="4920" loading="lazy">
+                    </div>
+                    <h3>Product details coming soon</h3>
+                    <p class="price-product">Price coming soon</p>
+                    <button class="add-to-cart" type="button" disabled aria-label="Product details coming soon">ADD TO CART</button>
                 </article>
             </div>
         </section>
 
         <section class="shop-category" id="tops" aria-labelledby="tops-title">
             <h2 id="tops-title">Tops</h2>
-            <div class="products-grid">
+            <div class="products-grid shop-product-grid">
                 <article class="products">
                     <div class="product-img">
                         <img src="img/blusa-satinada-anos90-5-scaled.jpg" alt="Person wearing a short-sleeve blouse with a colorful abstract print" loading="lazy">
                     </div>
                     <h3>Printed Short-Sleeve Blouse</h3>
                     <p class="price-product">$58</p>
+                    <button class="add-to-cart" type="button" disabled aria-label="Add Printed Short-Sleeve Blouse to cart (coming soon)">ADD TO CART</button>
                 </article>
             </div>
         </section>
 
         <section class="shop-category" id="sweaters" aria-labelledby="sweaters-title">
             <h2 id="sweaters-title">Sweaters</h2>
-            <div class="products-grid">
+            <div class="products-grid shop-product-grid">
                 <article class="products">
                     <div class="product-img">
                         <img src="img/Tiendas-segunda-mano-y-vintage-Sevilla-1024x683.jpg" alt="Embroidered sweater displayed on a rack beneath a vintage sign" loading="lazy">
                     </div>
                     <h3>Embroidered Knit Sweater</h3>
                     <p class="price-product">$68</p>
+                    <button class="add-to-cart" type="button" disabled aria-label="Add Embroidered Knit Sweater to cart (coming soon)">ADD TO CART</button>
                 </article>
             </div>
         </section>
 
         <section class="shop-category" id="dresses" aria-labelledby="dresses-title">
             <h2 id="dresses-title">Dresses</h2>
-            <div class="products-grid">
+            <div class="products-grid shop-product-grid">
                 <article class="products">
                     <div class="product-img">
                         <img src="https://images.unsplash.com/photo-1557771551-634f8d68b0a5?w=600&h=800&fit=crop" alt="Woman wearing a light floral dress outdoors" loading="lazy">
                     </div>
                     <h3>Light Floral Dress</h3>
                     <p class="price-product">$78</p>
+                    <button class="add-to-cart" type="button" disabled aria-label="Add Light Floral Dress to cart (coming soon)">ADD TO CART</button>
                 </article>
             </div>
         </section>
 
         <section class="shop-category" id="jackets-coats" aria-labelledby="jackets-coats-title">
             <h2 id="jackets-coats-title">Outwear</h2>
-            <div class="products-grid">
+            <div class="products-grid shop-product-grid">
                 <article class="products">
                     <div class="product-img">
                         <img src="img/hanger2.jpeg" alt="Jackets and other garments hanging on a rack" width="1536" height="2048" loading="lazy">
                     </div>
                     <h3>Vintage Jacket Edit</h3>
                     <p class="price-product">$95</p>
+                    <button class="add-to-cart" type="button" disabled aria-label="Add Vintage Jacket Edit to cart (coming soon)">ADD TO CART</button>
                 </article>
             </div>
         </section>
 
         <section class="shop-category" id="bottoms" aria-labelledby="bottoms-title">
             <h2 id="bottoms-title">Bottoms</h2>
-            <div class="products-grid">
+            <div class="products-grid shop-product-grid">
                 <article class="products">
                     <div class="product-img">
                         <img src="img/bagpark.jpeg" alt="Person wearing a light skirt while carrying vintage garments" width="1070" height="1427" loading="lazy">
                     </div>
                     <h3>Vintage Skirt</h3>
                     <p class="price-product">$75</p>
+                    <button class="add-to-cart" type="button" disabled aria-label="Add Vintage Skirt to cart (coming soon)">ADD TO CART</button>
                 </article>
             </div>
         </section>
 
         <section class="shop-category" id="shoes" aria-labelledby="shoes-title">
             <h2 id="shoes-title">Shoes</h2>
-            <div class="products-grid">
+            <div class="products-grid shop-product-grid">
                 <article class="products">
                     <div class="product-img">
                         <img src="img/shoes.jpeg" alt="Assorted vintage shoes arranged on a table" width="1536" height="2048" loading="lazy">
                     </div>
                     <h3>Assorted Vintage Shoes</h3>
                     <p class="price-product">$85</p>
+                    <button class="add-to-cart" type="button" disabled aria-label="Add Assorted Vintage Shoes to cart (coming soon)">ADD TO CART</button>
                 </article>
             </div>
         </section>
 
         <section class="shop-category" id="accessories" aria-labelledby="accessories-title">
             <h2 id="accessories-title">Accessories</h2>
-            <div class="products-grid">
+            <div class="products-grid shop-product-grid">
                 <article class="products">
                     <div class="product-img">
                         <img src="img/purses.jpeg" alt="Burgundy tote bag displayed with a black purse and accessories" width="1536" height="2048" loading="lazy">
                     </div>
                     <h3>Burgundy Tote Bag</h3>
                     <p class="price-product">$50</p>
+                    <button class="add-to-cart" type="button" disabled aria-label="Add Burgundy Tote Bag to cart (coming soon)">ADD TO CART</button>
                 </article>
             </div>
         </section>

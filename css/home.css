@@ -1,0 +1,364 @@
+/* ── HERO ── */
+.hero-img {
+    width: 100%;
+    height: 850px;
+    object-fit: cover;
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+}
+
+.hero-perla {
+    position: relative;
+    width: 100%;
+}
+
+.hero-perla::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.55) 45%, rgba(0, 0, 0, 0.65) 100%);
+    z-index: 1;
+}
+
+.hero_content {
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    color: white;
+    z-index: 2;
+}
+
+.hero_content p:first-child {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0.4rem 1rem;
+    color: var(--color-text);
+    display: inline-block;
+    font-family: var(--font-serif);
+}
+
+.hero_header {
+    font-family: var(--font-serif);
+    font-size: 3.8rem;
+    font-weight: 500;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hero_content p:last-of-type {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.hero_content a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin-right: 1rem;
+    border: 1.5px solid white;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+}
+
+.hero_content a:hover {
+    background-color: rgb(204, 197, 197);
+    color: var(--color-text);
+}
+
+/* ── CATEGORIES ── */
+.categories {
+    text-align: center;
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--color-divider);
+    border-bottom: 1px solid var(--color-divider);
+}
+
+.categories p {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--color-muted);
+    margin-bottom: 2.5rem;
+}
+
+.categories ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.categories li a {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    color: var(--color-muted);
+    border: 1px solid var(--color-border);
+    padding: 0.6rem 2rem;
+}
+
+.categories li a:hover {
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
+}
+
+/* ── NEW ARRIVALS ── */
+.new-arrivals {
+    padding: 5rem 4rem;
+    text-align: center;
+}
+
+.section-arrivals {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.3em;
+}
+
+.new-arrivals-title {
+    font-family: var(--font-serif);
+    color: var(--color-text);
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 4rem;
+}
+
+.product-arrivals {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 0.4rem;
+}
+
+.view-all {
+    display: inline-block;
+    font-size: 0.8rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-text);
+    padding-bottom: 2px;
+    margin: 2.5rem 0rem 3rem 0rem;
+}
+
+.view-all:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* ── STORY ── */
+.story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 95%;
+    margin-inline: auto;
+    position: relative;
+    height: auto;
+    min-height: 600px;
+}
+
+.story img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.9;
+}
+
+.story-content {
+    background-color: var(--color-card);
+    padding: 4rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.story-content p:first-child {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 1.5rem;
+}
+
+.story-content h2 {
+    font-family: var(--font-serif);
+    font-size: 2.3rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 1.8rem;
+}
+
+.story-content p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--color-muted);
+    margin-bottom: 1.3rem;
+}
+
+.story-content a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-text);
+    padding-bottom: 3px;
+    margin-top: 1rem;
+    width: fit-content;
+    transition: transform 1s ease;
+}
+
+.story-content a:hover {
+    font-weight: 400;
+    font-size: 0.77rem;
+    color: var(--color-muted);
+    transform: translateX(5px);
+}
+
+/* ── INSTAGRAM ── */
+.instagram {
+    text-align: center;
+    padding: 5rem 4rem;
+}
+
+.instagram-handle {
+    display: inline-block;
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.instagram-handle:hover {
+    color: var(--color-accent);
+    transform: scale(1.05);
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.7rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.instagram-grid a {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.instagram-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.instagram-grid img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .story {
+        grid-template-columns: 1fr;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+    }
+
+    .story img {
+        height: 350px;
+    }
+
+    .story-content {
+        padding: 3rem 2rem;
+    }
+
+    .story-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-img {
+        height: 550px;
+    }
+
+    .hero_header {
+        font-size: 2.2rem;
+    }
+
+    .hero_content p:last-of-type {
+        font-size: 0.85rem;
+    }
+
+    .hero_content a {
+        display: block;
+        width: fit-content;
+        margin: 0 auto 0.6rem;
+        padding: 0.55rem 1rem;
+        text-align: center;
+    }
+
+    .categories ul {
+        flex-wrap: wrap;
+        gap: 0.7rem;
+    }
+
+    .categories li a {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.68rem;
+    }
+
+    .categories p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-img {
+        height: 450px;
+    }
+
+    .hero_header {
+        font-size: 1.7rem;
+    }
+
+    .new-arrivals {
+        padding: 3rem 1.5rem;
+    }
+
+    .new-arrivals-title {
+        font-size: 1.8rem;
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .instagram {
+        padding: 3rem 1.5rem;
+    }
+}
