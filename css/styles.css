@@ -184,7 +184,24 @@ main {
 
 .price-product {
     font-size: 0.9rem;
+    font-family: var(--font-sans);
     color: var(--color-muted);
+    font-weight: 400;
+}
+
+.product-price {
+    font-family: var(--font-sans);
+    color: var(--color-muted);
+    font-weight: 400;
+}
+
+.product-arrivals,
+.product-attributes dd,
+#product-measurements dd {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    font-weight: 400;
 }
 
 /*___NEWSLETTER__*/
@@ -334,6 +351,47 @@ footer div a:hover {
     border-top: 1px solid rgba(250, 247, 242, 0.1);
     padding-top: 2rem;
     font-family: var(--font-serif);
+}
+
+.footer-compact {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 1rem 2rem;
+    padding: 2.25rem 4rem;
+}
+
+.footer-compact .footer-brand p {
+    margin-bottom: 0.35rem;
+}
+
+.footer-compact .footer-brand a {
+    font-size: 0.85rem;
+}
+
+.footer-compact .footer-copy {
+    grid-column: auto;
+    border-top: 0;
+    padding-top: 0;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .footer-compact {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 2rem 1.25rem;
+    }
+
+    .footer-compact .footer-brand {
+        grid-column: auto;
+        margin-bottom: 0;
+    }
+
+    .footer-compact .footer-copy {
+        border-top: 1px solid rgba(250, 247, 242, 0.1);
+        margin-top: 0.25rem;
+        padding-top: 1rem;
+        text-align: left;
+    }
 }
 
 

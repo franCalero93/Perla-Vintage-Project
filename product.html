@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product details for a Perla Vintage item.">
+    <title>Vintage Jacket Edit | Perla Vintage NYC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="icon" href="img/Logo-Perla.jpeg" type="image/jpeg">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="links-left">
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#">Lookbook</a></li>
+            </ul>
+
+            <a class="text_perla" href="perla_vintage.html">
+                <p class="brand-name">Perla Vintage</p>
+                <p class="brand-location">New York City</p>
+            </a>
+
+            <div class="nav-right">
+                <ul class="links-right">
+                    <li><a href="perla_vintage.html#our-story">About us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+                <div class="icons_nav">
+                    <a href="#" aria-label="Shopping bag (coming soon)">🛒</a>
+                </div>
+                <button class="hamburger" id="hamburger"
+                        aria-label="Abrir menú"
+                        aria-expanded="false"
+                        aria-controls="menu-movil">
+                    ☰
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="menu-movil" id="menu-movil">
+            <ul>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#">Lookbook</a></li>
+                <li><a href="perla_vintage.html#our-story">About us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="product-page">
+        <div class="product-layout">
+            <div class="product-gallery-column">
+                <a class="product-back-link" href="shop.html">&larr; Back to Shop</a>
+                <section class="product-gallery" aria-label="Product photographs">
+                    <div class="product-gallery-main">
+                        <img id="product-main-image" src="img/hanger2.jpeg"
+                             alt="Vintage jackets displayed on a clothing rack">
+                        <button class="product-gallery-previous" id="product-gallery-previous"
+                                type="button" aria-label="View previous product photo">
+                            <span aria-hidden="true">&lt;</span>
+                        </button>
+                        <button class="product-gallery-next" id="product-gallery-next"
+                                type="button" aria-label="View next product photo">
+                            <span aria-hidden="true">&gt;</span>
+                        </button>
+                    </div>
+                    <div class="product-gallery-thumbnails" id="product-thumbnails"
+                         aria-label="Choose a product photograph"></div>
+                </section>
+            </div>
+
+            <section class="product-information" aria-labelledby="product-name">
+                <p class="product-eyebrow">PERLA VINTAGE / <span id="product-breadcrumb-category">OUTERWEAR</span></p>
+                <h1 id="product-name"></h1>
+                <div class="product-pricing" id="product-pricing" aria-label="Product price">
+                    <del class="product-compare-price" id="product-compare-price" hidden></del>
+                    <p class="product-price" id="product-price"></p>
+                    <span class="product-sale-badge" id="product-sale-badge" hidden>Sale</span>
+                </div>
+                <p class="product-description" id="product-description" hidden></p>
+                <p class="product-demo-note">Demonstration listing - sample content for layout preview.</p>
+
+                <dl class="product-attributes" id="product-attributes"></dl>
+
+                <section class="product-measurements" aria-labelledby="measurements-title">
+                    <h2 id="measurements-title">Measurements</h2>
+                    <dl id="product-measurements"></dl>
+                    <p id="measurements-pending">Measurements are not provided for this demonstration item.</p>
+                </section>
+
+                <button class="product-action" id="product-action" type="button" disabled hidden></button>
+                <p class="product-cart-note">Cart and checkout are not connected in this demo.</p>
+
+                <details class="product-shipping">
+                    <summary>Shipping &amp; Returns</summary>
+                    <p>Placeholder: shipping costs, delivery times, and return terms will be added when the store policies are confirmed.</p>
+                </details>
+            </section>
+        </div>
+
+        <p class="product-not-found" id="product-not-found" role="alert" hidden>
+            <span id="product-error-message">This product could not be found.</span>
+            <a href="shop.html">Return to Shop</a>
+        </p>
+
+        <section class="related-products" id="related-products" aria-labelledby="related-products-title" hidden>
+            <h2 id="related-products-title">You May Also Like</h2>
+            <div class="related-products-grid" id="related-products-grid"></div>
+        </section>
+    </main>
+
+    <footer class="footer-compact">
+        <div class="footer-brand">
+            <p>Handpicked vintage clothing.</p>
+            <p>New York City.</p>
+            <a href="https://www.instagram.com/perla.vintage.nyc/?hl=en" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i> PERLA.VINTAGE.NYC
+            </a>
+        </div>
+        <p class="footer-copy">&copy; 2024 Perla Vintage. Made with &hearts; in New York City.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/product-utils.js"></script>
+    <script src="js/product-data.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>

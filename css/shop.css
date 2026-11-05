@@ -98,15 +98,22 @@
 }
 
 .shop-category#new-arrivals .product-img {
-    aspect-ratio: auto;
+    aspect-ratio: 4 / 5;
 }
 
 .shop-category#new-arrivals .product-img img {
-    height: auto;
+    height: 100%;
+    margin-bottom: 0;
+    object-fit: cover;
 }
 
 .shop-product-grid .products {
     text-align: center;
+}
+
+.shop-product-link {
+    display: block;
+    color: inherit;
 }
 
 .shop-product-grid .products h3 {
