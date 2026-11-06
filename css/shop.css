@@ -124,8 +124,30 @@
     margin-bottom: 0.35rem;
 }
 
-.shop-product-grid .price-product {
+.shop-product-grid .product-card-pricing {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
     margin-bottom: 0.8rem;
+}
+
+.shop-product-grid .price-product {
+    margin: 0;
+}
+
+.shop-product-grid .product-card-original-price {
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+}
+
+.shop-product-grid .product-card-sale-badge {
+    color: var(--color-accent);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 .add-to-cart {

@@ -4,6 +4,7 @@ window.productCatalog = {
             id: 'pv-001',
             name: 'Burgundy Tote Bag',
             price: 50,
+            originalPrice: null,
             currency: 'USD',
             categories: ['new-arrivals', 'accessories'],
             catalogImage: {
@@ -13,13 +14,16 @@ window.productCatalog = {
                 height: 2048
             },
             photos: [],
-            salePrice: null,
             description: '',
+            brand: null,
+            color: null,
+            material: null,
+            era: null,
             madeIn: null,
             size: null,
-            estimatedSize: null,
             measurements: [],
             condition: null,
+            conditionNotes: null,
             availability: null,
             relatedProducts: []
         },
@@ -27,6 +31,7 @@ window.productCatalog = {
             id: 'pv-002',
             name: 'Assorted Vintage Shoes',
             price: 85,
+            originalPrice: null,
             currency: 'USD',
             categories: ['new-arrivals', 'shoes'],
             catalogImage: {
@@ -36,13 +41,16 @@ window.productCatalog = {
                 height: 2048
             },
             photos: [],
-            salePrice: null,
             description: '',
+            brand: null,
+            color: null,
+            material: null,
+            era: null,
             madeIn: null,
             size: null,
-            estimatedSize: null,
             measurements: [],
             condition: null,
+            conditionNotes: null,
             availability: null,
             relatedProducts: []
         },
@@ -50,6 +58,7 @@ window.productCatalog = {
             id: 'pv-003',
             name: 'Printed Short-Sleeve Blouse',
             price: 58,
+            originalPrice: null,
             currency: 'USD',
             categories: ['tops'],
             catalogImage: {
@@ -58,13 +67,16 @@ window.productCatalog = {
                 loading: 'lazy'
             },
             photos: [],
-            salePrice: null,
             description: '',
+            brand: null,
+            color: null,
+            material: null,
+            era: null,
             madeIn: null,
             size: null,
-            estimatedSize: null,
             measurements: [],
             condition: null,
+            conditionNotes: null,
             availability: null,
             relatedProducts: []
         },
@@ -72,6 +84,7 @@ window.productCatalog = {
             id: 'pv-004',
             name: 'Embroidered Knit Sweater',
             price: 68,
+            originalPrice: null,
             currency: 'USD',
             categories: ['sweaters'],
             catalogImage: {
@@ -80,13 +93,16 @@ window.productCatalog = {
                 loading: 'lazy'
             },
             photos: [],
-            salePrice: null,
             description: '',
+            brand: null,
+            color: null,
+            material: null,
+            era: null,
             madeIn: null,
             size: null,
-            estimatedSize: null,
             measurements: [],
             condition: null,
+            conditionNotes: null,
             availability: null,
             relatedProducts: []
         },
@@ -94,6 +110,7 @@ window.productCatalog = {
             id: 'pv-005',
             name: 'Light Floral Dress',
             price: 78,
+            originalPrice: null,
             currency: 'USD',
             categories: ['dresses'],
             catalogImage: {
@@ -102,13 +119,16 @@ window.productCatalog = {
                 loading: 'lazy'
             },
             photos: [],
-            salePrice: null,
             description: '',
+            brand: null,
+            color: null,
+            material: null,
+            era: null,
             madeIn: null,
             size: null,
-            estimatedSize: null,
             measurements: [],
             condition: null,
+            conditionNotes: null,
             availability: null,
             relatedProducts: []
         },
@@ -116,6 +136,7 @@ window.productCatalog = {
             id: 'pv-006',
             name: 'Vintage Jacket Edit',
             price: 95,
+            originalPrice: null,
             currency: 'USD',
             categories: ['jackets-coats'],
             catalogImage: {
@@ -139,13 +160,16 @@ window.productCatalog = {
                     alt: 'Model wearing a black leather jacket on a city street'
                 }
             ],
-            salePrice: null,
             description: '',
+            brand: null,
+            color: null,
+            material: null,
+            era: null,
             madeIn: null,
             size: null,
-            estimatedSize: null,
             measurements: [],
             condition: null,
+            conditionNotes: null,
             availability: null,
             relatedProducts: []
         },
@@ -153,6 +177,7 @@ window.productCatalog = {
             id: 'pv-007',
             name: 'Vintage Skirt',
             price: 75,
+            originalPrice: null,
             currency: 'USD',
             categories: ['bottoms'],
             catalogImage: {
@@ -163,13 +188,16 @@ window.productCatalog = {
                 loading: 'lazy'
             },
             photos: [],
-            salePrice: null,
             description: '',
+            brand: null,
+            color: null,
+            material: null,
+            era: null,
             madeIn: null,
             size: null,
-            estimatedSize: null,
             measurements: [],
             condition: null,
+            conditionNotes: null,
             availability: null,
             relatedProducts: []
         }

@@ -23,10 +23,6 @@
     let activePhotos = [];
     let currentProductImageIndex = 0;
 
-    function formatPrice(amount, currency) {
-        return window.productUtils.formatPrice(amount, currency);
-    }
-
     function validateProduct(product) {
         if (!product || typeof product.name !== 'string' || !product.name.trim()) {
             throw new Error('Product data must include a name.');
@@ -63,18 +59,19 @@
 
     function renderPrice(product) {
         const pricing = document.getElementById('product-pricing');
-        const regularPrice = formatPrice(product.price, product.currency);
-        const salePrice = formatPrice(product.salePrice, product.currency);
-        const hasSale = regularPrice !== null && salePrice !== null &&
-            Number(product.salePrice) < Number(product.price);
+        const pricePresentation = window.productUtils.getPricePresentation(
+            product.price,
+            product.originalPrice,
+            product.currency
+        );
 
-        pricing.hidden = regularPrice === null;
-        productPrice.textContent = hasSale ? salePrice : regularPrice || '';
-        comparePrice.hidden = !hasSale;
-        saleBadge.hidden = !hasSale;
+        pricing.hidden = pricePresentation.currentPrice === null;
+        productPrice.textContent = pricePresentation.currentPrice || '';
+        comparePrice.hidden = !pricePresentation.isSale;
+        saleBadge.hidden = !pricePresentation.isSale;
 
-        if (hasSale) {
-            comparePrice.textContent = regularPrice;
+        if (pricePresentation.isSale) {
+            comparePrice.textContent = pricePresentation.originalPrice;
             productPrice.classList.add('product-price-on-sale');
         } else {
             comparePrice.textContent = '';
@@ -85,10 +82,14 @@
     function renderAttributes(product) {
         productAttributes.replaceChildren();
         const fields = [
+            ['Brand', product.brand],
+            ['Color', product.color],
+            ['Material', product.material],
+            ['Era', product.era],
             ['Made in', product.madeIn],
             ['Size', product.size],
-            ['Estimated size', product.estimatedSize],
-            ['Condition', product.condition]
+            ['Condition', product.condition],
+            ['Condition notes', product.conditionNotes]
         ];
 
         fields.forEach(function(field) {
@@ -104,6 +105,8 @@
             row.append(label, value);
             productAttributes.append(row);
         });
+
+        productAttributes.hidden = productAttributes.childElementCount === 0;
     }
 
     function renderMeasurements(measurements) {
@@ -235,7 +238,11 @@
             const card = document.createElement('a');
             const image = document.createElement('img');
             const name = document.createElement('h3');
-            const formattedPrice = formatPrice(product.price, product.currency);
+            const pricePresentation = window.productUtils.getPricePresentation(
+                product.price,
+                product.originalPrice,
+                product.currency
+            );
 
             card.className = 'related-product-card';
             card.href = 'product.html?id=' + encodeURIComponent(product.id);
@@ -244,10 +251,27 @@
             name.textContent = product.name;
             card.append(image, name);
 
-            if (formattedPrice !== null) {
+            if (pricePresentation.currentPrice !== null) {
+                const pricing = document.createElement('div');
                 const price = document.createElement('p');
-                price.textContent = formattedPrice;
-                card.append(price);
+
+                pricing.className = 'related-product-pricing';
+                price.className = 'product-price';
+                price.textContent = pricePresentation.currentPrice;
+                pricing.append(price);
+
+                if (pricePresentation.isSale) {
+                    const originalPrice = document.createElement('del');
+                    const saleBadge = document.createElement('span');
+
+                    originalPrice.className = 'product-compare-price';
+                    originalPrice.textContent = pricePresentation.originalPrice;
+                    saleBadge.className = 'product-sale-badge';
+                    saleBadge.textContent = 'Sale';
+                    pricing.append(originalPrice, saleBadge);
+                }
+
+                card.append(pricing);
             }
 
             relatedProductsGrid.append(card);
@@ -304,7 +328,16 @@
         showProductNotFound('Product catalog data error: ' + productIdError);
         console.error('Product catalog data error: ' + productIdError);
     } else if (matchingProducts.length === 1) {
-        renderProductPage(matchingProducts[0]);
+        try {
+            renderProductPage(matchingProducts[0]);
+        } catch (error) {
+            if (!(error instanceof Error)) {
+                throw error;
+            }
+
+            showProductNotFound('Product data error: ' + error.message);
+            console.error('Product data error for "' + requestedProductId + '":', error);
+        }
     } else if (requestedProductId) {
         showProductNotFound('The product "' + requestedProductId + '" could not be found.');
     } else {

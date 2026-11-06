@@ -23,18 +23,33 @@
         return element;
     }
 
-    function createCardContent(image, name, price) {
+    function createCardContent(image, name, pricePresentation) {
         const imageContainer = document.createElement('div');
         const title = document.createElement('h3');
+        const priceContainer = document.createElement('div');
         const priceElement = document.createElement('p');
 
         imageContainer.className = 'product-img';
         imageContainer.append(createImage(image));
         title.textContent = name;
+        priceContainer.className = 'product-card-pricing';
         priceElement.className = 'price-product';
-        priceElement.textContent = price;
+        priceElement.textContent = pricePresentation.currentPrice || '';
+        priceElement.hidden = pricePresentation.currentPrice === null;
+        priceContainer.append(priceElement);
 
-        return [imageContainer, title, priceElement];
+        if (pricePresentation.isSale) {
+            const originalPrice = document.createElement('del');
+            const saleBadge = document.createElement('span');
+
+            originalPrice.className = 'product-card-original-price';
+            originalPrice.textContent = pricePresentation.originalPrice;
+            saleBadge.className = 'product-card-sale-badge';
+            saleBadge.textContent = 'Sale';
+            priceContainer.append(originalPrice, saleBadge);
+        }
+
+        return [imageContainer, title, priceContainer];
     }
 
     function createProductCard(product) {
@@ -49,10 +64,12 @@
         link.append.apply(link, createCardContent(
             product.catalogImage,
             product.name,
-            window.productUtils.formatPrice(product.price, product.currency)
+            window.productUtils.getPricePresentation(
+                product.price,
+                product.originalPrice,
+                product.currency
+            )
         ));
-        const priceElement = link.querySelector('.price-product');
-        priceElement.hidden = priceElement.textContent === '';
 
         addButton.className = 'add-to-cart';
         addButton.type = 'button';
@@ -72,7 +89,11 @@
         article.append.apply(article, createCardContent(
             item.image,
             item.name,
-            item.priceLabel
+            {
+                currentPrice: item.priceLabel,
+                originalPrice: null,
+                isSale: false
+            }
         ));
 
         button.className = 'add-to-cart';

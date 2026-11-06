@@ -357,6 +357,24 @@
     color: var(--color-muted);
 }
 
+.related-product-pricing {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.65rem;
+}
+
+.related-product-pricing .product-price,
+.related-product-pricing .product-compare-price {
+    margin: 0;
+    font-size: 0.78rem;
+}
+
+.related-product-pricing .product-sale-badge {
+    font-size: 0.58rem;
+}
+
 .related-product-card:focus-visible,
 .product-shipping summary:focus-visible {
     outline: 2px solid var(--color-accent);

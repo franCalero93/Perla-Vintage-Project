@@ -59,8 +59,40 @@
         }
     }
 
+    function getPricePresentation(price, originalPrice, currency) {
+        const currentPrice = formatPrice(price, currency);
+        const validSale = currentPrice !== null &&
+            typeof price === 'number' && Number.isFinite(price) && price >= 0 &&
+            typeof originalPrice === 'number' && Number.isFinite(originalPrice) &&
+            originalPrice > price;
+
+        if (!validSale) {
+            return {
+                currentPrice: currentPrice,
+                originalPrice: null,
+                isSale: false
+            };
+        }
+
+        const formattedOriginalPrice = formatPrice(originalPrice, currency);
+        if (formattedOriginalPrice === null) {
+            return {
+                currentPrice: currentPrice,
+                originalPrice: null,
+                isSale: false
+            };
+        }
+
+        return {
+            currentPrice: currentPrice,
+            originalPrice: formattedOriginalPrice,
+            isSale: true
+        };
+    }
+
     window.productUtils = {
         getProductIdError: getProductIdError,
-        formatPrice: formatPrice
+        formatPrice: formatPrice,
+        getPricePresentation: getPricePresentation
     };
 })();
