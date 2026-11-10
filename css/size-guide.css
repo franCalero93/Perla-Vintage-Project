@@ -1,0 +1,203 @@
+.size-guide-page {
+    padding: 6rem 2rem 5rem;
+}
+
+.size-guide-heading {
+    max-width: 54rem;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.size-guide-eyebrow {
+    color: var(--color-muted);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.size-guide-heading h1 {
+    margin-top: 0.65rem;
+    font-family: 'Cormorant Garamond', var(--font-serif);
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: 0.12em;
+}
+
+.size-guide-content {
+    max-width: 58rem;
+    margin-inline: auto;
+}
+
+.size-guide-intro {
+    max-width: 44rem;
+    margin: 0 auto 3rem;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.size-guide-chart,
+.size-guide-measuring {
+    margin-top: 3rem;
+}
+
+.size-guide-section-heading {
+    margin-bottom: 1rem;
+}
+
+.size-guide-section-heading h2 {
+    margin-top: 0.35rem;
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+}
+
+.size-guide-provisional,
+.size-guide-osfa,
+.size-guide-measuring > p {
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+.size-guide-table-hint {
+    display: none;
+}
+
+.size-guide-provisional {
+    margin-bottom: 1rem;
+}
+
+.size-guide-table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--color-divider);
+    background-color: var(--color-background);
+    overscroll-behavior-inline: contain;
+}
+
+.size-guide-table-scroll:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.size-guide-table-scroll table {
+    width: 100%;
+    min-width: 42rem;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.size-guide-table-scroll th,
+.size-guide-table-scroll td {
+    padding: 1rem 1.1rem;
+    border-bottom: 1px solid var(--color-divider);
+    font-size: 0.82rem;
+    white-space: nowrap;
+}
+
+.size-guide-table-scroll thead th {
+    background-color: var(--color-card);
+    color: var(--color-text);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.size-guide-table-scroll tbody th {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.size-guide-table-scroll tbody tr:last-child th,
+.size-guide-table-scroll tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.size-guide-osfa {
+    margin-top: 1rem;
+}
+
+.size-guide-measuring > p {
+    margin-bottom: 1.25rem;
+}
+
+.size-guide-measurements {
+    border-top: 1px solid var(--color-divider);
+}
+
+.size-guide-measurements > div {
+    display: grid;
+    grid-template-columns: minmax(6rem, 0.35fr) 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-divider);
+}
+
+.size-guide-measurements dt {
+    color: var(--color-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.size-guide-measurements dd {
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.size-guide-vintage-note {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    border-left: 2px solid var(--color-accent);
+    background-color: var(--color-card);
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .size-guide-page {
+        padding: 4.5rem 1rem 3.5rem;
+    }
+
+    .size-guide-heading {
+        margin-bottom: 1.75rem;
+    }
+
+    .size-guide-intro {
+        margin-bottom: 2.25rem;
+        font-size: 0.88rem;
+        text-align: left;
+    }
+
+    .size-guide-chart,
+    .size-guide-measuring {
+        margin-top: 2.25rem;
+    }
+
+    .size-guide-table-scroll th,
+    .size-guide-table-scroll td {
+        padding: 0.85rem;
+    }
+
+    .size-guide-table-hint {
+        display: block;
+        margin: 0 0 0.65rem;
+        color: var(--color-muted);
+        font-size: 0.72rem;
+    }
+
+    .size-guide-measurements > div {
+        grid-template-columns: minmax(5rem, 0.4fr) 1fr;
+        gap: 0.75rem;
+    }
+
+    .size-guide-vintage-note {
+        margin-top: 2rem;
+        padding: 1.15rem;
+    }
+}

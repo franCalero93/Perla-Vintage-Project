@@ -1,3 +1,5 @@
+/*	Contiene los siete productos ficticios y sus datos. */
+
 window.productCatalog = {
     products: [
         {

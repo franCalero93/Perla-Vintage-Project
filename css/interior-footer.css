@@ -1,0 +1,29 @@
+.footer-interior {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 3rem;
+}
+
+.footer-interior .footer-support {
+    grid-column: 2;
+}
+
+.footer-interior .footer-copy {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-interior {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+    }
+
+    .footer-interior .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-interior .footer-support {
+        grid-column: 1 / -1;
+    }
+}

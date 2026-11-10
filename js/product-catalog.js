@@ -1,3 +1,5 @@
+/*	Genera las tarjetas de productos utilizando esos datos */
+
 (function() {
     const catalog = window.productCatalog;
     const catalogStatus = document.querySelector('.shop-preview-note');

@@ -239,13 +239,14 @@
         width: 100%;
         min-width: 0;
         min-height: 44px;
-        padding: 0.65rem 2.5rem 0.65rem 0.85rem;
-        border: 1px solid var(--color-border);
-        border-radius: 0;
-        background-color: var(--color-background);
+        padding: 0.65rem 0.85rem 0.65rem 0.85rem;
+        border: 1px solid rgba(128, 89, 63, 0.28);
+        border-radius: 3px;
+        background-color: #F8F1ED;
         color: var(--color-text);
-        font: inherit;
-        font-size: 0.8rem;
+        font-family: 'Cormorant Garamond', var(--font-serif);
+        font-size: 1.05rem;
+        font-weight: 500;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         text-align: left;
@@ -253,9 +254,28 @@
     }
 
     .shop-category-picker-icon {
-        margin-left: 1rem;
-        font-size: 1rem;
-        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 0.75rem;
+        height: 0.75rem;
+        flex: 0 0 auto;
+        margin-left: 0.5rem;
+        font-size: 0;
+        transition: transform 180ms ease;
+    }
+
+    .shop-category-picker-icon::before {
+        width: 0.42rem;
+        height: 0.42rem;
+        border-right: 1px solid currentColor;
+        border-bottom: 1px solid currentColor;
+        content: "";
+        transform: rotate(45deg);
+    }
+
+    .shop-category-picker-trigger[aria-expanded="true"] .shop-category-picker-icon {
+        transform: rotate(180deg);
     }
 
     .shop-category-options {
@@ -267,9 +287,10 @@
         max-height: min(60vh, 20rem);
         box-sizing: border-box;
         overflow-y: auto;
-        border: 1px solid var(--color-border);
-        background-color: var(--color-background);
-        box-shadow: 0 0.5rem 1rem rgba(34, 28, 21, 0.12);
+        border: 1px solid rgba(128, 89, 63, 0.28);
+        border-radius: 3px;
+        background-color: #FBF7F4;
+        box-shadow: 0 0.35rem 0.8rem rgba(34, 28, 21, 0.08);
     }
 
     .shop-category-picker.opens-up .shop-category-options {
@@ -289,22 +310,25 @@
         border: 0;
         background: transparent;
         color: var(--color-text);
-        font: inherit;
-        font-size: 0.8rem;
+        font-family: 'Cormorant Garamond', var(--font-serif);
+        font-size: 1rem;
+        font-weight: 500;
         letter-spacing: 0.08em;
         text-align: left;
         text-transform: uppercase;
         cursor: pointer;
+        transition: background-color 160ms ease, color 160ms ease;
     }
 
     .shop-category-option:hover,
-    .shop-category-option:focus-visible,
-    .shop-category-option[aria-pressed="true"] {
-        background-color: var(--color-card);
+    .shop-category-option:focus-visible {
+        background-color: #F5ECE6;
     }
 
     .shop-category-option[aria-pressed="true"] {
-        font-weight: 700;
+        background-color: #F1E5DD;
+        color: var(--color-accent);
+        font-weight: 600;
     }
 
     .shop-preview-note {
