@@ -13,6 +13,33 @@
     const productMeasurements = document.getElementById('product-measurements');
     const pendingMeasurements = document.getElementById('measurements-pending');
     const productAction = document.getElementById('product-action');
+    const questionTrigger = document.getElementById('product-question-trigger');
+    const questionDialog = document.getElementById('product-question-dialog');
+    const questionClose = document.getElementById('product-question-close');
+    const questionProduct = document.getElementById('product-question-product');
+    const questionForm = document.getElementById('product-question-form');
+    const questionName = document.getElementById('question-name');
+    const questionEmail = document.getElementById('question-email');
+    const questionMessage = document.getElementById('question-message');
+    const questionStatus = document.getElementById('product-question-status');
+    const questionSubmit = document.getElementById('product-question-submit');
+    const questionFields = [
+        {
+            input: questionName,
+            error: document.getElementById('question-name-error'),
+            requiredMessage: 'Please enter your name.'
+        },
+        {
+            input: questionEmail,
+            error: document.getElementById('question-email-error'),
+            requiredMessage: 'Please enter your email address.'
+        },
+        {
+            input: questionMessage,
+            error: document.getElementById('question-message-error'),
+            requiredMessage: 'Please enter your question.'
+        }
+    ];
     const productGallery = document.querySelector('.product-gallery');
     const mainProductImage = document.getElementById('product-main-image');
     const productThumbnails = document.getElementById('product-thumbnails');
@@ -192,6 +219,88 @@
         }
     }
 
+    function clearQuestionErrors() {
+        questionFields.forEach(function(field) {
+            field.input.removeAttribute('aria-invalid');
+            field.error.textContent = '';
+        });
+        questionStatus.hidden = true;
+        questionStatus.textContent = '';
+    }
+
+    function closeQuestionDialog() {
+        if (questionDialog.open) {
+            questionDialog.close();
+            questionTrigger.focus();
+        }
+    }
+
+    questionTrigger.addEventListener('click', function() {
+        clearQuestionErrors();
+        questionForm.reset();
+        questionProduct.textContent = productName.textContent;
+        questionSubmit.hidden = false;
+        questionDialog.showModal();
+        questionName.focus();
+    });
+
+    questionClose.addEventListener('click', closeQuestionDialog);
+
+    questionDialog.addEventListener('click', function(event) {
+        if (event.target === questionDialog) {
+            closeQuestionDialog();
+        }
+    });
+
+    questionDialog.addEventListener('cancel', function(event) {
+        event.preventDefault();
+        closeQuestionDialog();
+    });
+
+    questionFields.forEach(function(field) {
+        field.input.addEventListener('input', function() {
+            field.input.removeAttribute('aria-invalid');
+            field.error.textContent = '';
+        });
+    });
+
+    questionForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        clearQuestionErrors();
+
+        questionFields.forEach(function(field) {
+            field.input.value = field.input.value.trim();
+        });
+
+        let firstInvalidField = null;
+        questionFields.forEach(function(field) {
+            let errorMessage = '';
+            if (!field.input.value) {
+                errorMessage = field.requiredMessage;
+            } else if (field.input === questionEmail && !field.input.validity.valid) {
+                errorMessage = 'Please enter a valid email address.';
+            }
+
+            if (errorMessage) {
+                field.input.setAttribute('aria-invalid', 'true');
+                field.error.textContent = errorMessage;
+                firstInvalidField = firstInvalidField || field.input;
+            }
+        });
+
+        if (firstInvalidField) {
+            firstInvalidField.focus();
+            return;
+        }
+
+        questionForm.reset();
+        questionStatus.textContent =
+            'Your question has been prepared, but email delivery is not connected yet.';
+        questionStatus.hidden = false;
+        questionSubmit.hidden = true;
+        questionStatus.focus();
+    });
+
     function renderRelatedProducts(products) {
         relatedProductsGrid.replaceChildren();
         const seenIds = new Set();
@@ -284,8 +393,10 @@
         validateProduct(product);
         productLayout.hidden = false;
         productNotFound.hidden = true;
+        questionTrigger.hidden = false;
         productName.textContent = product.name;
         productName.dataset.productId = product.id;
+        questionProduct.textContent = product.name;
         document.title = product.name + ' | Perla Vintage NYC';
         const category = productCatalog.categories.find(function(item) {
             return item.id === product.categories[0];

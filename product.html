@@ -101,12 +101,54 @@
                 <p class="product-size-guide-note">For general sizing guidance, please visit our <a href="size-guide.html">Size Guide</a>.</p>
 
                 <button class="product-action" id="product-action" type="button" disabled hidden></button>
+                <button class="product-question-trigger" id="product-question-trigger" type="button" hidden>
+                    I HAVE A QUESTION
+                </button>
                 <p class="product-cart-note">Cart and checkout are not connected in this demo.</p>
 
                 <details class="product-shipping">
                     <summary>Shipping &amp; Returns</summary>
                     <p>Placeholder: shipping costs, delivery times, and return terms will be added when the store policies are confirmed.</p>
                 </details>
+
+                <dialog class="product-question-dialog" id="product-question-dialog"
+                        aria-labelledby="product-question-title">
+                    <div class="product-question-dialog-header">
+                        <h2 id="product-question-title">I HAVE A QUESTION</h2>
+                        <button class="product-question-close" id="product-question-close"
+                                type="button" aria-label="Close question form">&times;</button>
+                    </div>
+                    <p class="product-question-about">Question about:</p>
+                    <p class="product-question-product" id="product-question-product"></p>
+
+                    <form class="product-question-form" id="product-question-form" novalidate>
+                        <div class="product-question-field">
+                            <label for="question-name">Name</label>
+                            <input id="question-name" name="name" type="text"
+                                   autocomplete="name" required
+                                   aria-describedby="question-name-error">
+                            <span class="product-question-error" id="question-name-error"></span>
+                        </div>
+                        <div class="product-question-field">
+                            <label for="question-email">Email</label>
+                            <input id="question-email" name="email" type="email"
+                                   autocomplete="email" required
+                                   aria-describedby="question-email-error">
+                            <span class="product-question-error" id="question-email-error"></span>
+                        </div>
+                        <div class="product-question-field">
+                            <label for="question-message">Question</label>
+                            <textarea id="question-message" name="question" rows="4" required
+                                      aria-describedby="question-message-error"></textarea>
+                            <span class="product-question-error" id="question-message-error"></span>
+                        </div>
+                        <p class="product-question-status" id="product-question-status"
+                           role="status" aria-live="polite" tabindex="-1" hidden></p>
+                        <button class="product-question-submit" id="product-question-submit" type="submit">
+                            Send
+                        </button>
+                    </form>
+                </dialog>
             </section>
         </div>
 
